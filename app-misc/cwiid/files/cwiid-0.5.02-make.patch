@@ -1,0 +1,150 @@
+diff -ur cwiid.old/Makefile.in cwiid/Makefile.in
+--- cwiid.old/Makefile.in	2007-03-19 20:48:12.000000000 -0400
++++ cwiid/Makefile.in	2007-03-25 22:53:56.000000000 -0400
+@@ -43,3 +43,5 @@
+ 
+ .PHONY: all install clean distclean uninstall uninstall_config $(LIB_DIRS) \
+ 	$(BIN_DIRS) wmdemo
++
++.NOTPARALLEL:
+diff -ur cwiid.old/common/include/app.mak cwiid/common/include/app.mak
+--- cwiid.old/common/include/app.mak	2007-03-08 15:13:43.000000000 -0500
++++ cwiid/common/include/app.mak	2007-03-25 23:24:36.000000000 -0400
+@@ -5,20 +5,24 @@
+ 
+ INST_DIR ?= /usr/local/bin
+ 
++DEST_INST_DIR = $(DESTDIR)/$(INST_DIR)
++
+ all: $(APP_NAME)
+ 
+ $(APP_NAME): $(OBJECTS)
+ 	$(CC) -o $@ $(OBJECTS) $(LDFLAGS) $(LDLIBS)
+ 
+-install: $(APP_NAME) $(INST_DIR)
+-	install -d $(INST_DIR)
+-	install $(APP_NAME) $(INST_DIR)
++install: $(APP_NAME) $(DEST_INST_DIR)
++	install $(APP_NAME) $(DEST_INST_DIR)
++
++$(DEST_INST_DIR):
++	install -d $(DEST_INST_DIR)
+ 
+ clean:
+ 	rm -f $(APP_NAME) $(OBJECTS) $(DEPS)
+ 
+ uninstall:
+-	rm -f $(INST_DIR)/$(APP_NAME)
++	rm -f $(DEST_INST_DIR)/$(APP_NAME)
+ 
+ ifneq ($(MAKECMDGOALS),clean)
+ ifneq ($(MAKECMDGOALS),distclean)
+diff -ur cwiid.old/common/include/defs.mak.in cwiid/common/include/defs.mak.in
+--- cwiid.old/common/include/defs.mak.in	2007-02-24 11:12:04.000000000 -0500
++++ cwiid/common/include/defs.mak.in	2007-03-26 00:14:22.000000000 -0400
+@@ -11,8 +11,8 @@
+ LEX = @LEX@
+ YACC = @YACC@
+ 
+-CWIID_CONFIG_DIR = @CWIID_CONFIG_DIR@
+-CWIID_PLUGINS_DIR = @CWIID_PLUGINS_DIR@
++CWIID_CONFIG_DIR = $(DESTDIR)/@CWIID_CONFIG_DIR@
++CWIID_PLUGINS_DIR = $(DESTDIR)/@CWIID_PLUGINS_DIR@
+ 
+ CFLAGS = -g -Wall -DCWIID_VERSION=\"@PACKAGE_VERSION@\" \
+ 	-DCWIID_PLUGINS_DIR=\"$(CWIID_PLUGINS_DIR)\" \
+diff -ur cwiid.old/common/include/lib.mak.in cwiid/common/include/lib.mak.in
+--- cwiid.old/common/include/lib.mak.in	2007-03-19 01:29:05.000000000 -0400
++++ cwiid/common/include/lib.mak.in	2007-03-25 23:23:12.000000000 -0400
+@@ -1,10 +1,14 @@
+ #Copyright (C) 2007 L. Donnie Smith
+ 
++LDCONFIG = @LDCONFIG@
++
+ HEADER	   = $(LIB_NAME).h
+ STATIC_LIB = lib$(LIB_NAME).a
+ LINK_NAME  = lib$(LIB_NAME).so
+ SO_NAME    = $(LINK_NAME).$(MAJOR_VER)
+ SHARED_LIB = $(SO_NAME).$(MINOR_VER)
++DEST_INC_INST_DIR = $(DESTDIR)/$(INC_INST_DIR)
++DEST_LIB_INST_DIR = $(DESTDIR)/$(LIB_INST_DIR)
+ 
+ OBJECTS = $(SOURCES:.c=.o)
+ DEPS    = $(SOURCES:.c=.d)
+@@ -26,27 +30,31 @@
+ 
+ install: install_header install_static install_shared
+ 
+-install_header:
+-	install -d $(INC_INST_DIR)
+-	install $(LIB_NAME).h $(INC_INST_DIR)
+-
+-install_static: static
+-	install -d $(LIB_INST_DIR)
+-	install $(STATIC_LIB) $(LIB_INST_DIR)
+-
+-install_shared: shared
+-	install -d $(LIB_INST_DIR)
+-	install $(SHARED_LIB) $(LIB_INST_DIR)
+-	ln -sf $(SHARED_LIB) $(LIB_INST_DIR)/$(SO_NAME)
+-	ln -sf $(SO_NAME) $(LIB_INST_DIR)/$(LINK_NAME)
+-	@LDCONFIG@
++install_header: $(DEST_INC_INST_DIR)
++	install $(LIB_NAME).h $(DEST_INC_INST_DIR)
++
++$(DEST_INC_INST_DIR):
++	install -d $(DEST_INC_INST_DIR)
++
++install_static: static $(DEST_LIB_INST_DIR)
++	install $(STATIC_LIB) $(DEST_LIB_INST_DIR)
++
++install_shared: shared $(DEST_LIB_INST_DIR)
++	install $(SHARED_LIB) $(DEST_LIB_INST_DIR)
++	ln -sf $(SHARED_LIB) $(DEST_LIB_INST_DIR)/$(SO_NAME)
++	ln -sf $(SO_NAME) $(DEST_LIB_INST_DIR)/$(LINK_NAME)
++	$(LDCONFIG)
++
++$(DEST_LIB_INST_DIR):
++	install -d $(DEST_LIB_INST_DIR)
+ 
+ clean:
+ 	rm -f $(STATIC_LIB) $(SHARED_LIB) $(OBJECTS) $(DEPS)
+ 
+ uninstall:
+-	rm -f $(INC_INST_DIR)/$(LIB_NAME).h $(LIB_INST_DIR)/$(STATIC_LIB) \
+-	    $(LIB_INST_DIR)/$(LINK_NAME)*
++	rm -f $(DEST_INC_INST_DIR)/$(LIB_NAME).h \
++		$(DEST_LIB_INST_DIR)/$(STATIC_LIB) \
++		$(DEST_LIB_INST_DIR)/$(LINK_NAME)*
+ 
+ ifneq ($(MAKECMDGOALS),clean)
+ ifneq ($(MAKECMDGOALS),distclean)
+diff -ur cwiid.old/common/include/plugin.mak cwiid/common/include/plugin.mak
+--- cwiid.old/common/include/plugin.mak	2007-03-08 15:13:43.000000000 -0500
++++ cwiid/common/include/plugin.mak	2007-03-26 00:15:29.000000000 -0400
+@@ -7,15 +7,23 @@
+ 
+ CFLAGS += -fpic
+ 
++#TODO:unify the way DESTDIR is handled
++#Currently, defs.mak adds DESTDIR to the plugin INST_DIR,
++#so we don't do it here
++#DEST_INST_DIR = $(DESTDIR)/$(INST_DIR)
++DEST_INST_DIR = $(INST_DIR)
++
+ all: $(LIB_NAME)
+ 
+ $(LIB_NAME): $(OBJECTS)
+ 	$(CC) -shared $(LDFLAGS) $(LDLIBS) -o $(LIB_NAME) $(OBJECTS)
+ 
+-install: $(LIB_NAME)
+-	install -d $(INST_DIR)
++install: $(LIB_NAME) $(DEST_INST_DIR)
+ 	install $(LIB_NAME) $(INST_DIR)
+ 
++$(DEST_INST_DIR):
++	install -d $(DEST_INST_DIR)
++
+ clean:
+ 	rm -f $(LIB_NAME) $(OBJECTS) $(DEPS)
+ 

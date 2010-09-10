@@ -1,0 +1,16 @@
+# ChangeLog for media-plugins/moovida-plugins-ugly
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  17 Jun 2009; Frédéric Liétart <thelinuxfr@free.fr>
+  -moovida-plugins-ugly-1.0.2.ebuild, +moovida-plugins-ugly-1.0.3.ebuild:
+  Version bump.
+
+  16 Jun 2009; Frédéric Liétart <thelinuxfr@free.fr>
+  -moovida-plugins-ugly-1.0.1.ebuild, +moovida-plugins-ugly-1.0.2.ebuild:
+  Version bump.
+
+  02 Jun 2009; Frédéric Liétart <thelinuxfr@free.fr>
+  +moovida-plugins-ugly-1.0.1.ebuild:
+  Version bump. Elisa rebranding into Moovida.
+
