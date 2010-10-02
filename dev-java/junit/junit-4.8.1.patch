@@ -1,0 +1,102 @@
+--- /usr/portage/dev-java/junit/junit-4.6.ebuild	2009-07-19 09:35:25.000000000 -0500
++++ junit-4.7.ebuild	2009-10-30 13:43:11.000000000 -0500
+@@ -4,6 +4,7 @@
+ 
+ # WARNING: JUNIT.JAR IS _NOT_ SYMLINKED TO ANT-CORE LIB FOLDER AS JUNIT3 IS
+ 
++EAPI="2"
+ JAVA_PKG_IUSE="doc examples source test"
+ 
+ inherit java-pkg-2 java-ant-2
+@@ -17,47 +18,61 @@
+ KEYWORDS="amd64 ~ia64 ppc ppc64 x86"
+ IUSE=""
+ 
+-CDEPEND="dev-java/hamcrest-core"
++CDEPEND="dev-java/hamcrest-core:0"
+ RDEPEND=">=virtual/jre-1.5
+ 	${CDEPEND}"
+ DEPEND=">=virtual/jdk-1.5
+ 	userland_GNU? ( >=sys-apps/findutils-4.3 )
+-	app-arch/unzip
+ 	${CDEPEND}"
+ 
+ S="${WORKDIR}/${MY_P}"
+ 
++#JAVA_ANT_REWRITE_CLASSPATH=1
++#EANT_GENTOO_CLASSPATH="hamcrest-core"
++EANT_BUILD_TARGET="jars"
++
+ src_unpack() {
+-	unpack ${A}
+-	cd "${S}"
++	default
++
++	# Unpack source JAR
++	mkdir -p "${S}/src/main/java" "${S}/src/test/java" \
++		|| die "Unable to create source directories"
++	pushd "${S}/src/main/java" >/dev/null
++	jar xf "${S}/${P}-src.jar" || die "Unable to unpack sources."
++	popd >/dev/null
+ 
+-	mkdir -p src/main/java src/test/java || die
+-	unzip -qq -d src/main/java ${P}-src.jar || die "unzip failed"
++	# copy Gentoo manifest to working directory
++	cp "${FILESDIR}/gentoo-manifest.mf" "${S}"
++}
+ 
++java_prepare() {
+ 	# fix javadoc compilation
+ 	if use doc ; then
+-		cp "${S}"/javadoc/stylesheet.css "${S}" || die
++		cp "${S}"/javadoc/stylesheet.css "${S}" \
++			|| die "Unable to copy Javdoc stylesheet"
+ 	fi
+ 
+-	rm -rf javadoc temp.hamcrest.source *.jar || die
+-	find . -name "*.class" -delete || die
+-}
+-
+-src_compile() {
+-	eant build jars -Dhamcrestlib=$(java-pkg_getjars hamcrest-core) $(use_doc javadoc)
++	# remove binary and other generated files
++	rm -rf "${rmopt}" javadoc temp.hamcrest.source *.jar \
++		|| die "Unable to clean generated files."
++	find . -name "*.class" -delete \
++		|| die "Unable to remove distributed class files"
++
++	# Let Ant know where its hamcrest went
++	EANT_EXTRA_ARGS="-Dhamcrestlib=$(java-pkg_getjars hamcrest-core)"
++
++	# Add Gentoo manifest information to generated JAR files
++	java-ant_xml-rewrite -f build.xml -c \
++		-e jar -a manifest -v "gentoo-manifest.mf"
+ }
+ 
+ src_test() {
+-	mkdir classes || die
+-	cd junit/tests || die
++	mkdir classes || die "Unable to create build directory for tests"
+ 	local cp=$(java-pkg_getjars hamcrest-core):${S}/${PN}${PV}/${PN}-dep-${PV}.jar
+-	ejavac -sourcepath java -classpath ${cp} -d "${S}"/classes $(find -name "*.java")
++	ejavac -classpath ${cp} -d classes $(find junit/tests -name "*.java")
+ 
+-	cd "${S}"/classes || die
+-	for FILE in $(find . -name "AllTests\.class"); do
+-		local CLASS=$(echo ${FILE} | sed -e "s/\.class//" | sed -e "s%/%.%g" | sed -e "s/\.\.//")
+-		java -classpath .:${cp} org.junit.runner.JUnitCore ${CLASS} || die "Test ${CLASS} failed"
+-	done
++	java -classpath ${cp}:classes org.junit.runner.JUnitCore junit.tests.AllTests \
++		|| "Tests failed."
+ }
+ 
+ src_install() {
+@@ -68,7 +83,7 @@
+ 	use source && java-pkg_dosrc src/main/java/org src/main/java/junit
+ 
+ 	if use doc; then
+-		dohtml -r doc/*
++		dohtml -r doc/* || die
+ 		java-pkg_dojavadoc ${PN}${PV}/javadoc
+ 	fi
+ }
