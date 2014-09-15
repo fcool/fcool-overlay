@@ -22,6 +22,16 @@ RDEPEND="sys-libs/zlib
         media-libs/freetype:2
         media-libs/libpng:0=
 	x11-libs/libX11
+	x11-libs/libXrender
+	x11-libs/libICE
+        x11-libs/libSM
+        x11-libs/libX11
+        x11-libs/libXcursor
+        x11-libs/libXext
+        x11-libs/libXfixes
+        x11-libs/libXi
+        x11-libs/libXrandr
+        x11-libs/libXrender
 	glib? ( dev-libs/glib:2 )
         icu? ( >=dev-libs/icu-49:= )
 	tiff? ( media-libs/tiff:0 )"
