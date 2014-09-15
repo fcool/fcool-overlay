@@ -21,6 +21,7 @@ RDEPEND="sys-libs/zlib
 	media-libs/fontconfig
         media-libs/freetype:2
         media-libs/libpng:0=
+	x11-libs/libX11
 	glib? ( dev-libs/glib:2 )
         icu? ( >=dev-libs/icu-49:= )
 	tiff? ( media-libs/tiff:0 )"
