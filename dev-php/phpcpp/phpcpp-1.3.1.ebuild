@@ -5,7 +5,7 @@
 EAPI=5
 PHP_EXT_SKIP_PHPIZE="yes"
 PHP_EXT_NAME="libphpcpp"
-PHP_EXT_INI="yes"
+PHP_EXT_INI="no"
 USE_PHP="php5-5 php5-4"
 MY_PN="PHP-CPP"
 S=${WORKDIR}/${MY_PN}-${PV}
@@ -70,13 +70,7 @@ src_install() {
 	local slot
         for slot in $(php_get_slots); do
                 my_slot_env ${slot}
-                mkdir modules
-                mv *.so modules/
-
-                insinto "${EXT_DIR}"
-                newins "modules/${PHP_EXT_NAME}.so" "${PHP_EXT_NAME}.so" || die "Unable to install extension"
-                # Let's put the default module away
-                # emake -e install
+		mkdir -p ${INSTALL_LIB}
+                emake -e install
         done
-        php-ext-source-r2_createinifiles
 }

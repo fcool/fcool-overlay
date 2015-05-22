@@ -46,7 +46,7 @@ my_slot_env() {
 	export INSTALL_HEADERS="${D}${PHPPREFIX}/include"
 	export INSTALL_LIB="${D}${PHPPREFIX}/$(get_libdir)"
 	export CFLAGS
-	export LINKER_FLAGS="-shared ${LDFLAGS}"
+	export LINKER_FLAGS="-shared -Wl,-rpath,\"$(${PHP_CONFIG} --prefix)/lib64\" -Wl,--no-undefined ${LDFLAGS}"
 }
 
 src_compile() {
