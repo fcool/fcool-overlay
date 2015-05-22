@@ -4,11 +4,11 @@
 
 EAPI=5
 PHP_EXT_SKIP_PHPIZE="yes"
-PHP_EXT_NAME="libphpcpp"
+PHP_EXT_NAME="php-poppler"
 PHP_EXT_INI="yes"
 USE_PHP="php5-5 php5-4"
-MY_PN="PHP-CPP"
-S=${WORKDIR}/${MY_PN}-${PV}
+MY_PN="php-poppler"
+S=${WORKDIR}/${MY_PN}
 
 
 inherit php-ext-source-r2
@@ -22,17 +22,17 @@ inherit php-ext-source-r2
 # eclasses tend to list descriptions of how to use their functions properly.
 # take a look at /usr/portage/eclass/ for more examples.
 
-DESCRIPTION="The PHP-CPP library is a C++ library for developing PHP extensions"
-HOMEPAGE="http://www.php-cpp.com/"
+DESCRIPTION="The php-poppler is a binding to the poppler pdf library"
+HOMEPAGE="http://www.digital-competence.de/php-poppler"
 
 #SRC_URI="https://api.github.com/repos/CopernicaMarketingSoftware/PHP-CPP/tarball/v${PV}  -> ${P}.tgz"
-SRC_URI="https://github.com/CopernicaMarketingSoftware/PHP-CPP/archive/v${PV}.tar.gz -> ${P}.tgz"
+SRC_URI="http://www.digital-competence.de/php-poppler/${P}.tgz"
 LICENSE="Apache-2.0"
 
 SLOT="0"
 
 KEYWORDS="amd64"
-#DEPEND=">=dev-lang/php-5.4"
+DEPEND=">=dev-php/phpcpp-1.3.1"
 #RDEPEND="${DEPEND}"
 
 src_configure() {
@@ -68,15 +68,15 @@ src_compile() {
 
 src_install() {
 	local slot
-        for slot in $(php_get_slots); do
-                my_slot_env ${slot}
-                mkdir modules
-                mv *.so modules/
+	for slot in $(php_get_slots); do
+		my_slot_env ${slot}
+		mkdir modules
+		mv *.so modules/
 
-                insinto "${EXT_DIR}"
-                newins "modules/${PHP_EXT_NAME}.so" "${PHP_EXT_NAME}.so" || die "Unable to install extension"
-                # Let's put the default module away
+		insinto "${EXT_DIR}"
+		newins "modules/${PHP_EXT_NAME}.so" "${PHP_EXT_NAME}.so" || die "Unable to install extension"
+		# Let's put the default module away
                 # emake -e install
         done
-        php-ext-source-r2_createinifiles
+	php-ext-source-r2_createinifiles
 }
