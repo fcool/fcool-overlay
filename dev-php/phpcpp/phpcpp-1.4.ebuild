@@ -41,6 +41,7 @@ src_configure() {
 
 my_slot_env() {
 	php_init_slot_env $@
+	export PHPPREFIX="${EPREFIX}/usr/${libdir}/${slot}"
 	export PHP_CONFIG="${PHPCONFIG}"
 	export INSTALL_PREFIX="${D}${PHPPREFIX}"
 	export INSTALL_HEADERS="${D}${PHPPREFIX}/include"
