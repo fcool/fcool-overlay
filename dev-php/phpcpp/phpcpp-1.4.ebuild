@@ -6,7 +6,7 @@ EAPI=5
 PHP_EXT_SKIP_PHPIZE="yes"
 PHP_EXT_NAME="libphpcpp"
 PHP_EXT_INI="no"
-USE_PHP="php5-5 php5-4"
+USE_PHP="php5-6 php5-5 php5-4"
 MY_PN="PHP-CPP"
 S=${WORKDIR}/${MY_PN}-${PV}
 

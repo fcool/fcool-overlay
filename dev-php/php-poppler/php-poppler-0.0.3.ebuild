@@ -6,7 +6,7 @@ EAPI=5
 PHP_EXT_SKIP_PHPIZE="yes"
 PHP_EXT_NAME="php-poppler"
 PHP_EXT_INI="yes"
-USE_PHP="php5-5 php5-4"
+USE_PHP="php5-6 php5-5 php5-4"
 MY_PN="php-poppler"
 S=${WORKDIR}/${MY_PN}
 
@@ -32,7 +32,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 
 KEYWORDS="amd64"
-DEPEND=">=dev-php/phpcpp-1.3.1 >=app-text/poppler-0.32[png,tiff]"
+DEPEND=">=dev-php/phpcpp-1.3.1 >=app-text/poppler-0.32[png,tiff] php_targets_php5-6? ( dev-php/phpcpp[php_targets_php5-6] ) php_targets_php5-5? ( dev-php/phpcpp[php_targets_php5-5] ) php_targets_php5-4? ( dev-php/phpcpp[php_targets_php5-4] )"
 RDEPEND="${DEPEND}"
 
 src_configure() {
