@@ -7,9 +7,9 @@ EAPI=5
 inherit golang-build
 
 DESCRIPTION="Takes care of the mapping between your PHP file and Flow proxy classes"
-HOMEPAGE="http://influxdb.com/"
+HOMEPAGE="https://github.com/dfeyer/flow-debugproxy/"
 LICENSE="LGPL-3"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS=""
 SLOT="0"
 IUSE=""
 
