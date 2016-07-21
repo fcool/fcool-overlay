@@ -1,0 +1,224 @@
+Description: <short summary of the patch>
+ TODO: Put a short summary on the line above and replace this paragraph
+ with a longer explanation of this change. Complete the meta-information
+ with other relevant fields (see below for details). To make it easier, the
+ information below has been extracted from the changelog. Adjust it or drop
+ it.
+ .
+ kf5-messagelib (4:16.04.3-1) unstable; urgency=medium
+ .
+   [ Automatic packaging ]
+   * Update symbols files from buildds logs (4:16.04.2-2).
+ .
+   [ Maximiliano Curia ]
+   * Update symbols files for x32 compatibility
+Author: Maximiliano Curia <maxy@debian.org>
+
+---
+The information above should follow the Patch Tagging Guidelines, please
+checkout http://dep.debian.net/deps/dep3/ to learn about the format. Here
+are templates for supplementary fields that you might want to add:
+
+Origin: <vendor|upstream|other>, <url of original patch>
+Bug: <url in upstream bugtracker>
+Bug-Debian: https://bugs.debian.org/<bugnumber>
+Bug-Ubuntu: https://launchpad.net/bugs/<bugnumber>
+Forwarded: <no|not-needed|url proving that it has been forwarded>
+Reviewed-By: <name and email of someone who approved the patch>
+Last-Update: 2016-07-17
+
+--- kf5-messagelib-16.04.3.orig/messageviewer/src/utils/mimetype.h
++++ kf5-messagelib-16.04.3/messageviewer/src/utils/mimetype.h
+@@ -43,7 +43,8 @@ enum HtmlMode {
+     Normal,         ///< A normal plaintext message, non-multipart
+     Html,           ///< A HTML message, non-multipart
+     MultipartPlain, ///< A multipart/alternative message, the plain text part is currently displayed
+-    MultipartHtml   ///< A multipart/altervative message, the HTML part is currently displayed
++    MultipartHtml,   ///< A multipart/altervative message, the HTML part is currently displayed
++    MultipartIcal   ///< A multipart/alternative message, the Calendar part is currently displayed
+ };
+ 
+ /**
+@@ -72,4 +73,4 @@ QString MESSAGEVIEWER_EXPORT fileNameFor
+         const QString &fallbackFileName2 = QString());
+ }
+ }
+-#endif
+\ No newline at end of file
++#endif
+--- kf5-messagelib-16.04.3.orig/messageviewer/src/viewer/messagepart.cpp
++++ kf5-messagelib-16.04.3/messageviewer/src/viewer/messagepart.cpp
+@@ -1505,11 +1505,13 @@ QString MimeMessagePart::text() const
+ 
+ //-----AlternativeMessagePart----------------------
+ 
+-AlternativeMessagePart::AlternativeMessagePart(ObjectTreeParser *otp, KMime::Content *textNode, KMime::Content *htmlNode)
++AlternativeMessagePart::AlternativeMessagePart(ObjectTreeParser *otp, KMime::Content *textNode, KMime::Content *htmlNode, KMime::Content *icalNode)
+     : MessagePart(otp, QString())
+     , mTextNode(textNode)
+     , mHTMLNode(htmlNode)
++	, mIcalNode(icalNode)
+     , mViewHtml(false)
++    , mViewIcal(false)
+ {
+     if (!mTextNode && !mHTMLNode) {
+         qCWarning(MESSAGEVIEWER_LOG) << "not a valid nodes";
+@@ -1523,6 +1525,10 @@ AlternativeMessagePart::AlternativeMessa
+     if (mHTMLNode) {
+         mHTMLPart = MimeMessagePart::Ptr(new MimeMessagePart(mOtp, mHTMLNode, true));
+     }
++    
++    if (mIcalNode) {
++		mIcalPart = MimeMessagePart::Ptr(new MimeMessagePart(mOtp, mIcalNode, true));
++	}
+ }
+ 
+ AlternativeMessagePart::~AlternativeMessagePart()
+@@ -1535,11 +1541,21 @@ void AlternativeMessagePart::setViewHtml
+     mViewHtml = html;
+ }
+ 
++void AlternativeMessagePart::setViewIcal(bool ical)
++{
++	mViewIcal = ical;
++}
++
+ bool AlternativeMessagePart::viewHtml() const
+ {
+     return mViewHtml;
+ }
+ 
++bool AlternativeMessagePart::viewIcal() const
++{
++	return mViewIcal;
++}
++
+ void AlternativeMessagePart::html(bool decorate)
+ {
+     MessageViewer::HtmlWriter *writer = mOtp->htmlWriter();
+@@ -1550,16 +1566,18 @@ void AlternativeMessagePart::html(bool d
+ 
+     const HTMLBlock::Ptr aBlock(attachmentBlock());
+ 
+-    if (viewHtml() && mHTMLPart) {
+-        mHTMLPart->html(decorate);
+-    } else if (mTextNode) {
+-        mTextPart->html(decorate);
+-    }
++	if (!viewIcal()) {
++		if (viewHtml() && mHTMLPart) {
++			mHTMLPart->html(decorate);
++		} else if (mTextNode) {
++			mTextPart->html(decorate);
++		}
++	}
+ }
+ 
+ QString AlternativeMessagePart::text() const
+ {
+-    if (mTextPart) {
++    if (!viewIcal() && mTextPart) {
+         return mTextPart->text();
+     }
+     return QString();
+--- kf5-messagelib-16.04.3.orig/messageviewer/src/viewer/messagepart.h
++++ kf5-messagelib-16.04.3/messageviewer/src/viewer/messagepart.h
+@@ -336,23 +336,28 @@ class AlternativeMessagePart : public Me
+ {
+ public:
+     typedef QSharedPointer<AlternativeMessagePart> Ptr;
+-    AlternativeMessagePart(MessageViewer::ObjectTreeParser *otp, KMime::Content *textNode, KMime::Content *htmlNode);
++    AlternativeMessagePart(MessageViewer::ObjectTreeParser *otp, KMime::Content *textNode, KMime::Content *htmlNode, KMime::Content *icalNode);
+     virtual ~AlternativeMessagePart();
+ 
+     QString text() const Q_DECL_OVERRIDE;
+     void html(bool decorate) Q_DECL_OVERRIDE;
+ 
+     void setViewHtml(bool html);
++	void setViewIcal(bool ical);
+     bool viewHtml() const;
++	bool viewIcal() const;
+     void fix() const Q_DECL_OVERRIDE;
+     void copyContentFrom() const Q_DECL_OVERRIDE;
+ private:
+     KMime::Content *mTextNode;
+     KMime::Content *mHTMLNode;
++	KMime::Content *mIcalNode;
+ 
+     MimeMessagePart::Ptr mTextPart;
+     MimeMessagePart::Ptr mHTMLPart;
++	MimeMessagePart::Ptr mIcalPart;
+     bool mViewHtml;
++	bool mViewIcal;
+ };
+ 
+ class CertMessagePart : public MessagePart
+--- kf5-messagelib-16.04.3.orig/messageviewer/src/viewer/objecttreeparser.cpp
++++ kf5-messagelib-16.04.3/messageviewer/src/viewer/objecttreeparser.cpp
+@@ -969,7 +969,8 @@ MessagePart::Ptr ObjectTreeParser::proce
+     if (!child) {
+         return MessagePart::Ptr();
+     }
+-
++	
++	KMime::Content *dataIcal = findType(child, "text/calendar", false, true);
+     KMime::Content *dataHtml = findType(child, "text/html", false, true);
+     KMime::Content *dataPlain = findType(child, "text/plain", false, true);
+ 
+@@ -990,23 +991,40 @@ MessagePart::Ptr ObjectTreeParser::proce
+         }
+     }
+ 
+-    if (dataPlain || dataHtml) {
+-        AlternativeMessagePart::Ptr mp(new AlternativeMessagePart(this, dataPlain, dataHtml));
+-
+-        if ((mSource->htmlMail() && dataHtml) ||
+-                (dataHtml && dataPlain && dataPlain->body().isEmpty())) {
+-            if (dataPlain) {
+-                mNodeHelper->setNodeProcessed(dataPlain, false);
+-            }
+-            mSource->setHtmlMode(Util::MultipartHtml);
+-            mp->setViewHtml(true);
+-        }
++    if (dataPlain || dataHtml || dataIcal) {
++        AlternativeMessagePart::Ptr mp(new AlternativeMessagePart(this, dataPlain, dataHtml, dataIcal));
+ 
+-        if (!mSource->htmlMail() && dataPlain) {
+-            mNodeHelper->setNodeProcessed(dataHtml, false);
+-            mSource->setHtmlMode(Util::MultipartPlain);
+-            mp->setViewHtml(false);
+-        }
++		if (dataIcal) {
++			if (dataHtml) {
++				mNodeHelper->setNodeProcessed(dataHtml, false);
++			}
++			if (dataPlain) {
++				mNodeHelper->setNodeProcessed(dataPlain, false);
++			}
++			mSource->setHtmlMode(Util::MultipartIcal);
++			mp->setViewIcal(true);
++		} else {
++			if ((mSource->htmlMail() && dataHtml) ||
++					(dataHtml && dataPlain && dataPlain->body().isEmpty())) {
++				if (dataPlain) {
++					mNodeHelper->setNodeProcessed(dataPlain, false);
++				}
++				if (dataIcal) {
++					mNodeHelper->setNodeProcessed(dataIcal, false);
++				}
++				mSource->setHtmlMode(Util::MultipartHtml);
++				mp->setViewHtml(true);
++			}
++
++			if (!mSource->htmlMail() && dataPlain) {
++				mNodeHelper->setNodeProcessed(dataHtml, false);
++				if (dataIcal) {
++					mNodeHelper->setNodeProcessed(dataIcal, false);
++				}
++				mSource->setHtmlMode(Util::MultipartPlain);
++				mp->setViewHtml(false);
++			}
++		}
+         return mp;
+     }
+ 
