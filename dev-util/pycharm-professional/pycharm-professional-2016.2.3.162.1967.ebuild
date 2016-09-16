@@ -6,7 +6,7 @@ EAPI=6
 
 inherit eutils versionator fdo-mime
 
-SLOT="2016.1"
+SLOT="2016.2"
 PN_SLOTTED="${PN}${SLOT}"
 MY_PV="$(get_version_component_range 1-3)"
 BUILD_NUMBER="$(get_version_component_range 4-5)"
