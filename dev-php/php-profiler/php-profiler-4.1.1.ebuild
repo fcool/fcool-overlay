@@ -37,3 +37,17 @@ DEPEND=">=dev-lang/php-5.4
 net-misc/curl[ssl] 
 dev-libs/libpcre"
 RDEPEND="${DEPEND}"
+
+src_install() {
+        php-ext-source-r2_src_install
+
+        php-ext-source-r2_addtoinifiles "tideways.api_key" ""
+        php-ext-source-r2_addtoinifiles "tideways.sample_rate" "100"
+        php-ext-source-r2_addtoinifiles "tideways.framework" "flow"
+        php-ext-source-r2_addtoinifiles "tideways.load_library" "0"
+        php-ext-source-r2_addtoinifiles "tideways.auto_prepend_library" "0"
+        php-ext-source-r2_addtoinifiles "tideways.auto_start" "0"
+        php-ext-source-r2_addtoinifiles "tideways.collect" "tracing"
+        php-ext-source-r2_addtoinifiles "tideways.monitor" "basic"
+        php-ext-source-r2_addtoinifiles "tideways.connection" "unix:///usr/local/var/run/tidewaysd.sock"
+}
