@@ -8,7 +8,12 @@ inherit eutils versionator fdo-mime
 
 SLOT="$(get_version_component_range 1-2)"
 PN_SLOTTED="${PN}${SLOT}"
-MY_PV="$(get_version_component_range 1-3)"
+if [ "$(get_version_component_range 3)" = "0" ]; then
+	MY_PV="$(get_version_component_range 1-2)"
+else
+	MY_PV="$(get_version_component_range 1-3)"
+fi
+
 BUILD_NUMBER="$(get_version_component_range 4-5)"
 
 DESCRIPTION="PhpStorm is a commercial, cross-platform IDE for PHP"
