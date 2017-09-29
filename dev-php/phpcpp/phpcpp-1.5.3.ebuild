@@ -11,7 +11,7 @@ MY_PN="PHP-CPP"
 S=${WORKDIR}/${MY_PN}-${PV}
 
 
-inherit php-ext-source-r2
+inherit eutils php-ext-source-r2
 #inherit eutils
 # A well-used example of an eclass function that needs eutils is epatch. If
 # your source needs patches applied, it's suggested to put your patch in the
