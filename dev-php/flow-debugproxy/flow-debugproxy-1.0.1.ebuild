@@ -11,7 +11,7 @@ LICENSE="LGPL-3"
 KEYWORDS="~amd64"
 SLOT="0"
 IUSE=""
-DEPEND="dev-go/cli dev-go/ansi"
+DEPEND="dev-go/cli dev-go/ansi dev-go/mxj"
 RDEPEND="${DEPEND}"
 
 EGO_PN="github.com/dfeyer/flow-debugproxy"
