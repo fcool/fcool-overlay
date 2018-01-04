@@ -1,0 +1,2 @@
+# arguments for prometheus node exporter
+command_args="--config.my-cnf=/etc/mysqld_exporter.my.cnf"
