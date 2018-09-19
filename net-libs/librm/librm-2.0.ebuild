@@ -24,7 +24,9 @@ DEPEND="dev-libs/glib:2
     
     media-libs/libsndfile
     net-libs/gupnp
-    net-libs/gssdp"
+    net-libs/gssdp
+    net-libs/libcapi
+"
     
 RDEPEND="$DEPEND"
 
