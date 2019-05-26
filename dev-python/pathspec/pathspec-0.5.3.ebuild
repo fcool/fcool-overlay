@@ -10,7 +10,7 @@ DESCRIPTION=" Utility library for gitignore style pattern matching of file paths
 
 HOMEPAGE="https://github.com/cpburnz/python-path-specification"
 SRC_URI="https://github.com/cpburnz/python-path-specification/archive/303b339735e9b706a6278c204ee544d208309529.zip -> ${P}.zip"
-LICENSE="MPL 2.0"
+LICENSE="MPL-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""

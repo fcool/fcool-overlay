@@ -10,7 +10,7 @@ DESCRIPTION="A linter for YAML files"
 
 HOMEPAGE="https://yamllint.readthedocs.io/en/latest/"
 SRC_URI="https://github.com/adrienverge/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
-LICENSE="GPL-3.0"
+LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
