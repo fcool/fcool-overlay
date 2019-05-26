@@ -6,7 +6,7 @@ DESCRIPTION="Router Manager library"
 HOMEPAGE="https://www.tabos.org/"
 SRC_URI="https://git.krueger-it.net/tabos.org/librm/-/archive/v${PV}/librm-v${PV}.tar.gz"
 
-LICENSE="GPL2"
+LICENSE="GPL-2"
 SLOT=0
 KEYWORDS="~x86 ~amd64"
 S="${WORKDIR}/${PN}-v${PV}"
