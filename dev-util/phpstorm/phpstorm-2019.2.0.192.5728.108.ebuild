@@ -37,7 +37,7 @@ src_unpack() {
 src_prepare() {
 	default
 
-	if use system-jre ; then rm -rvf jre64 || die ; fi
+	if use system-jre ; then rm -rvf jbr || die ; fi
 }
 
 src_install() {
@@ -47,7 +47,7 @@ src_install() {
 	doins -r .
 	# globbing doesn't work with `fperms()`'
 	fperms a+x "${install_dir}/bin/"{${PN}.sh,fsnotifier{,64,-arm}}
-	use system-jre || chmod a+x "${D}/${install_dir}"/jre64/bin/*
+	use system-jre || chmod a+x "${D}/${install_dir}"/jbr/bin/*
 
 	dosym "${install_dir}/bin/${PN}.sh" "/usr/bin/${PN_SLOTTED}"
 
