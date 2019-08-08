@@ -6,7 +6,7 @@ EAPI=5
 PHP_EXT_SKIP_PHPIZE="yes"
 PHP_EXT_NAME="libphpcpp"
 PHP_EXT_INI="no"
-USE_PHP="php5-6 php5-5 php5-4"
+USE_PHP="php7-0 php7-1 php7-2 php7-3"
 MY_PN="PHP-CPP"
 S=${WORKDIR}/${MY_PN}-${PV}
 
@@ -29,10 +29,10 @@ HOMEPAGE="http://www.php-cpp.com/"
 SRC_URI="https://github.com/CopernicaMarketingSoftware/PHP-CPP/archive/v${PV}.tar.gz -> ${P}.tgz"
 LICENSE="Apache-2.0"
 
-SLOT="0"
+SLOT="1"
 
 KEYWORDS="amd64"
-DEPEND=">=dev-lang/php-5.4:="
+DEPEND="php_targets_php7-0? ( dev-lang/php:7.0 ) php_targets_php7-1? ( dev-lang/php:7.1 ) php_targets_php7-2? ( dev-lang/php:7.2 ) php_targets_php7-3? ( dev-lang/php:7.3 )"
 #RDEPEND="${DEPEND}"
 
 src_configure() {
@@ -61,7 +61,7 @@ src_compile() {
         for slot in $(php_get_slots); do
                 my_slot_env ${slot}
 		sed -e"s/\-c \-g/-c ${CFLAGS}/" -i Makefile
-		epatch ${FILESDIR}/noldconfig.patch
+		epatch ${FILESDIR}/noldconfig-2.patch
                 emake -e || die "Unable to make code"
         done
 	mkdir modules

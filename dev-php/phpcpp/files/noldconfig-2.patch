@@ -1,0 +1,12 @@
+--- Makefile.orig	2019-08-08 19:31:04.389412480 +0200
++++ Makefile	2019-08-08 19:31:13.170412342 +0200
+@@ -237,9 +237,6 @@
+ 	if [ -e ${PHP_STATIC_LIBRARY} ]; then ${CP} ${PHP_STATIC_LIBRARY} ${INSTALL_LIB}/; \
+ 		${LN} ${INSTALL_LIB}/${PHP_STATIC_LIBRARY} ${INSTALL_LIB}/libphpcpp.a; \
+ 	fi
+-	if `which ldconfig`; then \
+-		ldconfig; \
+-	fi
+ 
+ uninstall:
+ 	${RM} ${INSTALL_HEADERS}/phpcpp*
