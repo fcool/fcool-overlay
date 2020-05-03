@@ -1,0 +1,8 @@
+# /etc/conf.d/MailHog: config file for /etc/init.d/MailHog
+#
+# Options to pass to the numad daemon.
+# See the MailHog -h for more info.
+
+SMTP_BIND_ADDR="0.0.0.0:25"
+UI_BIND_ADDR="0.0.0.0:8025"
+LOG_FILE=/var/log/MailHog.log

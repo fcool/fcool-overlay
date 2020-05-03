@@ -1,0 +1,12 @@
+#!/sbin/openrc-run
+command=/usr/bin/MailHog
+command_args="-smtp-bind-addr ${SMTP_BIND_ADDR} -ui-bind-addr ${UI_BIND_ADDR}"
+command_background="true"
+output_log="${LOG_FILE}"
+error_log="${LOG_FILE}"
+pidfile=/run/MailHog.pid
+
+depend() {
+        use net
+        after logger
+}
