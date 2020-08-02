@@ -1,5 +1,5 @@
---- Makefile.orig	2016-08-06 16:05:42.102286758 +0200
-+++ Makefile	2016-08-06 16:05:54.149285365 +0200
+--- a/Makefile.orig	2016-08-06 16:05:42.102286758 +0200
++++ b/Makefile	2016-08-06 16:05:54.149285365 +0200
 @@ -214,7 +214,4 @@
  	if [ -e ${PHP_STATIC_LIBRARY} ]; then ${CP} ${PHP_STATIC_LIBRARY} ${INSTALL_LIB}/; \
  		${LN} ${INSTALL_LIB}/${PHP_STATIC_LIBRARY} ${INSTALL_LIB}/libphpcpp.a; \

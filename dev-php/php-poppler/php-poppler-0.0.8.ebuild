@@ -2,16 +2,16 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=5
+EAPI=7
 PHP_EXT_SKIP_PHPIZE="yes"
 PHP_EXT_NAME="php-poppler"
 PHP_EXT_INI="yes"
-USE_PHP="php5-6 php5-5 php5-4"
+USE_PHP="php5-6 php5-5 php5-4 php7-0 php7-1 php7-2 php7-3"
 MY_PN="php-poppler"
 S=${WORKDIR}/${MY_PN}
 
 
-inherit php-ext-source-r2
+inherit php-ext-source-r3
 #inherit eutils
 # A well-used example of an eclass function that needs eutils is epatch. If
 # your source needs patches applied, it's suggested to put your patch in the
@@ -32,7 +32,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 
 KEYWORDS="amd64"
-DEPEND=">=dev-php/phpcpp-1.3.1 >=app-text/poppler-0.62[png,tiff] php_targets_php5-6? ( dev-php/phpcpp[php_targets_php5-6] ) php_targets_php5-5? ( dev-php/phpcpp[php_targets_php5-5] ) php_targets_php5-4? ( dev-php/phpcpp[php_targets_php5-4] )"
+DEPEND=">=dev-php/phpcpp-1.3.1:= >=app-text/poppler-0.88:=[png,tiff] php_targets_php5-6? ( dev-php/phpcpp[php_targets_php5-6] ) php_targets_php5-5? ( dev-php/phpcpp[php_targets_php5-5] ) php_targets_php5-4? ( dev-php/phpcpp[php_targets_php5-4] ) php_targets_php7-0? ( dev-php/phpcpp:1[php_targets_php7-0] ) php_targets_php7-1? ( dev-php/phpcpp:1[php_targets_php7-1] ) php_targets_php7-2? ( dev-php/phpcpp:1[php_targets_php7-2] ) php_targets_php7-3? ( dev-php/phpcpp:1[php_targets_php7-3] )"
 RDEPEND="${DEPEND}"
 
 src_configure() {
@@ -62,8 +62,6 @@ src_compile() {
 		sed -e"s/\-c \-g/-c ${CFLAGS}/" -i Makefile
                 emake -e || die "Unable to make code"
         done
-	mkdir modules
-	cp ${PHP_EXT_NAME}.so modules
 }
 
 src_install() {
@@ -78,5 +76,5 @@ src_install() {
 		# Let's put the default module away
                 # emake -e install
         done
-	php-ext-source-r2_createinifiles
+	php-ext-source-r3_createinifiles
 }
