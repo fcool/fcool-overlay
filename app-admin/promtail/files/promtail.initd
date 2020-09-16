@@ -1,0 +1,19 @@
+#!/sbin/openrc-run
+description="promtail log watcher"
+pidfile=${pidfile:-"/run/${RC_SVCNAME}.pid"}
+user=${user:-${RC_SVCNAME}}
+group=${group:-${RC_SVCNAME}}
+
+command="/usr/bin/promtail"
+command_args="${command_args:---config.file=/etc/loki/promtail-local-config.yaml}"
+command_background="true"
+start_stop_daemon_args="--stdout /var/log/loki/${RC_SVCNAME}.log \
+        --stderr /var/log/loki/${RC_SVCNAME}.log"
+
+depend() {
+        after net
+}
+
+start_pre() {
+        checkpath -q -d -m 0755 /var/lib/promtail
+}

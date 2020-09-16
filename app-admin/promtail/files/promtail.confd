@@ -1,0 +1,6 @@
+# /etc/conf.d/loki: config file for /etc/init.d/loki
+#
+# Options to pass to the loki daemon.
+# See loki -h for more info.
+
+command_args=""
