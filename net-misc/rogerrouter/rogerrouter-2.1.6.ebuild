@@ -1,6 +1,6 @@
 EAPI=6
 
-inherit eutils meson fdo-mime gnome2-utils xdg-utils
+inherit eutils meson gnome2-utils xdg-utils
 
 DESCRIPTION="Manage your FRITZ!Box or compatible router"
 HOMEPAGE="https://www.tabos.org/"
@@ -28,8 +28,7 @@ DEPEND="app-text/ghostscript-gpl
 RDEPEND="$DEPEND"
 
 pkg_postinst() {
-	fdo-mime_desktop_database_update
-	fdo-mime_mime_database_update
+        xdg_mimeinfo_database_update
 	gnome2_icon_cache_update
 	gnome2_schemas_update
 	xdg_desktop_database_update

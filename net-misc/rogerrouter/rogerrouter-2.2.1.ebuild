@@ -1,11 +1,10 @@
 EAPI=6
 
-inherit eutils meson fdo-mime gnome2-utils xdg-utils
+inherit eutils meson gnome2-utils xdg-utils
 
 DESCRIPTION="Manage your FRITZ!Box or compatible router"
 HOMEPAGE="https://www.tabos.org/"
-SRC_URI="https://git.krueger-it.net/tabos.org/${PN}/-/archive/v${PV}/${PN}-v${PV}.tar.gz"
-
+SRC_URI="https://gitlab.com/tabos/${PN}/-/archive/v${PV}/${PN}-v${PV}.tar.gz"
 LICENSE="GPL-2"
 SLOT=0
 KEYWORDS="~x86 ~amd64"
@@ -18,19 +17,19 @@ DEPEND="app-text/ghostscript-gpl
     sys-devel/gettext
     dev-cpp/gtkmm:3.0
     net-libs/libsoup:2.4
-    net-libs/librm
+    >=net-libs/librm-2.1.4
     appindicator? ( dev-libs/libappindicator:3 )
     dev-libs/glib:2
     >=media-libs/tiff-4.0
     app-text/poppler[cxx]
-    evo? ( >=mail-client/evolution-3.22 )"
+    evo? ( >=mail-client/evolution-3.22 )
+    >=gui-libs/libhandy-0.90.0"
 
 
 RDEPEND="$DEPEND"
 
 pkg_postinst() {
-	fdo-mime_desktop_database_update
-	fdo-mime_mime_database_update
+        xdg_mimeinfo_database_update
 	gnome2_icon_cache_update
 	gnome2_schemas_update
 	xdg_desktop_database_update
