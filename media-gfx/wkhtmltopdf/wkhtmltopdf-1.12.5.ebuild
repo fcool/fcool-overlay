@@ -34,7 +34,8 @@ RDEPEND="sys-libs/zlib
         x11-libs/libXrender
 	glib? ( dev-libs/glib:2 )
 	tiff? ( media-libs/tiff:0 )"
-DEPEND="${RDEPEND}"
+DEPEND="${RDEPEND}
+        <sys-devel/gcc-9"
 
 # Tests pull data from websites and require a
 # special patched version of qt so many fail
