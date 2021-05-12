@@ -5,10 +5,10 @@ user=${user:-${RC_SVCNAME}}
 group=${group:-${RC_SVCNAME}}
 
 command="/usr/bin/promtail"
-command_args="${command_args:---config.file=/etc/loki/promtail-local-config.yaml}"
+command_args="${command_args:---config.file=/etc/promtail/promtail-local-config.yaml}"
 command_background="true"
-start_stop_daemon_args="--stdout /var/log/loki/${RC_SVCNAME}.log \
-        --stderr /var/log/loki/${RC_SVCNAME}.log"
+start_stop_daemon_args="--stdout /var/log/promtail/${RC_SVCNAME}.log \
+        --stderr /var/log/promtail/${RC_SVCNAME}.log"
 
 depend() {
         after net

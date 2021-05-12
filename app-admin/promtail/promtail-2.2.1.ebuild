@@ -43,6 +43,7 @@ src_install() {
 	doins ./src/${EGO_PN}/cmd/promtail/promtail-local-config.yaml
 	
 	keepdir /var/lib/promtail
+	keepdir /var/log/promtail
 	
 	newconfd "${FILESDIR}/promtail.confd" promtail
 	newinitd "${FILESDIR}/promtail.initd" promtail
