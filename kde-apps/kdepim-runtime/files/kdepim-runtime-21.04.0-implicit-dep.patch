@@ -1,0 +1,30 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+--- a/CMakeLists.txt    2021-05-08 02:49:16.855884600 +0200
++++ b/CMakeLists.txt    2021-05-08 02:48:52.079200725 +0200
+@@ -103,11 +103,11 @@
+ set_package_properties(Qca-qt5 PROPERTIES DESCRIPTION "Qt Cryptographic Architecture"
+                    URL "https://invent.kde.org/libraries/qca" TYPE REQUIRED
+                    PURPOSE "Needed for ews resource.")
+ option(KDEPIM_RUN_AKONADI_TEST "Enable autotest based on Akonadi." TRUE)
+ # QT5 package
+-find_package(Qt5 ${QT_REQUIRED_VERSION} CONFIG REQUIRED TextToSpeech Network Widgets Test XmlPatterns DBus WebEngineWidgets NetworkAuth)
++find_package(Qt5 ${QT_REQUIRED_VERSION} CONFIG REQUIRED TextToSpeech Network Widgets Test XmlPatterns Concurrent DBus WebEngineWidgets NetworkAuth)
+ 
+ 
+ # KF5 package
+ find_package(KF5Config ${KF5_MIN_VERSION} CONFIG REQUIRED)
+ find_package(KF5ConfigWidgets ${KF5_MIN_VERSION} CONFIG REQUIRED)
+--- a/resources/etesync/CMakeLists.txt  2021-05-08 02:52:48.910704041 +0200
++++ b/resources/etesync/CMakeLists.txt  2021-05-08 02:53:22.060606158 +0200
+@@ -49,10 +49,11 @@
+ if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
+     set_target_properties(akonadi_etesync_resource PROPERTIES UNITY_BUILD ON)
+ endif()
+ target_link_libraries(akonadi_etesync_resource
+     ${ETEBASE_LIBRARIES}
++    Qt5::Concurrent
+     Qt5::DBus
+     KF5::AkonadiAgentBase
+     KF5::ConfigCore
+     KF5::Contacts
+     KF5::CalendarCore
