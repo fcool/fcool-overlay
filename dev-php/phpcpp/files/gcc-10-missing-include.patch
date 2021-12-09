@@ -1,0 +1,21 @@
+From 86d3624857a4d6a5ca8f760bb233ed083079e462 Mon Sep 17 00:00:00 2001
+From: "Nathanael d. Noblet" <nathanael@noblet.ca>
+Date: Mon, 30 Mar 2020 14:11:39 -0600
+Subject: [PATCH] Fix GCC 10 missing include
+
+---
+ include/throwable.h | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/include/throwable.h b/include/throwable.h
+index 8b9adafa..aa3a1107 100644
+--- a/include/throwable.h
++++ b/include/throwable.h
+@@ -11,6 +11,7 @@
+  */
+ #include <exception>
+ #include <string>
++#include <stdexcept>
+ 
+ /**
+  *  Forward declarations
