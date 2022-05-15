@@ -1,0 +1,17 @@
+#!/sbin/openrc-run
+description="php-fpm_exporter log watcher"
+pidfile=${pidfile:-"/run/${RC_SVCNAME}.pid"}
+
+: ${PHPFPM_EXPORTER_SCRAPE_URI:=tcp://127.0.0.1:9000/status}
+: ${PHPFPM_EXPORTER_LISTEN:=:9253}
+
+command="/usr/bin/php-fpm_exporter"
+command_args="server --phpfpm.scrape-uri \"${PHPFPM_EXPORTER_SCRAPE_URI}\" --web.listen-address ${PHPFPM_EXPORTER_LISTEN}"
+command_background="true"
+start_stop_daemon_args="--stdout /var/log/${RC_SVCNAME}.log \
+        --stderr /var/log/${RC_SVCNAME}.log"
+
+depend() {
+        after php-fpm*
+}
+

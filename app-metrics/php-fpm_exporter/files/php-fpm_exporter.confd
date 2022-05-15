@@ -1,0 +1,10 @@
+# /etc/conf.d/php-fpm_exporter: config file for /etc/init.d/php-fpm_exporter
+#
+# Options to pass to the php-fpm_exporter daemon.
+# See php-fpm_exporter -h for more info.
+
+# For local sockets use something like: unix:///run/php-fpm/php.sock;/status
+
+PHPFPM_EXPORTER_LISTEN=":9253"
+PHPFPM_EXPORTER_SCRAPE_URI="tcp://127.0.0.1:9000/status"
+
