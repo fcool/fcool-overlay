@@ -34,8 +34,7 @@ RDEPEND="sys-libs/zlib
         x11-libs/libXrender
 	glib? ( dev-libs/glib:2 )
 	tiff? ( media-libs/tiff:0 )"
-DEPEND="${RDEPEND}
-        <sys-devel/gcc-9"
+DEPEND="${RDEPEND}"
 
 # Tests pull data from websites and require a
 # special patched version of qt so many fail
@@ -43,6 +42,7 @@ RESTRICT="test"
 
 PATCHES=(
         "${FILESDIR}/4.8.2-javascriptcore-x32.patch"
+        "${FILESDIR}/gcc9-qforeach.patch"
 )
 
 qt_use() {
