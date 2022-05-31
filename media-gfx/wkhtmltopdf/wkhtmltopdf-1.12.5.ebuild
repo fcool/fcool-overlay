@@ -96,7 +96,7 @@ src_configure() {
 		$(qt_use tiff libtiff system)
 
 #	cd src/3rdparty/webkit/Source
-#	cd ${S}/work/qt
+4#	cd ${S}/work/qt
 #	emake qmake
 
 #	sed -i -e 's:std=c++11:std=c++98:' */qt/Makefile* Makefile */Makefile || \
@@ -110,6 +110,8 @@ src_compile() {
 	WKHTMLTOX_VERSION=${PV}
 	cd ${S}/work/qt
 	emake
+        cd ${S}/work/qt/src/3rdparty/webkit/Source/WebKit/qt
+        emake
 	cd ${S}/work/app
 	../qt/bin/qmake ../../wkhtmltopdf.pro
 	emake
