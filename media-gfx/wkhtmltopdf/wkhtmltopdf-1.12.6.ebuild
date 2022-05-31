@@ -8,7 +8,7 @@ inherit multilib git-r3 flag-o-matic
 DESCRIPTION="Convert html to pdf (and various image formats) using webkit"
 HOMEPAGE="https://github.com/wkhtmltopdf/wkhtmltopdf"
 EGIT_REPO_URI="https://github.com/wkhtmltopdf/wkhtmltopdf.git"
-EGIT_COMMIT="a8ba57e1260a0430e0e9e53da05211beef4cbbc3"
+EGIT_COMMIT="6a57c1449797d6cb915921fb747f3ac36199241f"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -35,7 +35,7 @@ RDEPEND="sys-libs/zlib
 	glib? ( dev-libs/glib:2 )
 	tiff? ( media-libs/tiff:0 )"
 DEPEND="${RDEPEND}
-        <sys-devel/gcc-9"
+	<sys-devel/gcc-9"
 
 # Tests pull data from websites and require a
 # special patched version of qt so many fail
@@ -110,8 +110,8 @@ src_compile() {
 	WKHTMLTOX_VERSION=${PV}
 	cd ${S}/work/qt
 	emake
-	cd ${S}/work/qt/src/3rdparty/webkit/Source/WebKit/qt
-	emake
+        cd ${S}/work/qt/src/3rdparty/webkit/Source/WebKit/qt
+        emake
 	cd ${S}/work/app
 	../qt/bin/qmake ../../wkhtmltopdf.pro
 	emake
