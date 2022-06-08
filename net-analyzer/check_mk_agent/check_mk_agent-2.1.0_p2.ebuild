@@ -52,7 +52,7 @@ src_install() {
 		insinto /etc/xinetd.d
 		newins cfg_examples/xinetd_caching.conf check_mk
 	fi
-	
+
 	systemd_dounit scripts/super-server/0_systemd/check-mk-agent{.socket,@.service}
 
 	# Install the check_mk_agent logwatch plugin
@@ -64,10 +64,11 @@ src_install() {
 	fi
 
 	# Install any other useflag-enabled agent plugins
+	insinto /etc/check_mk
 	exeinto /usr/lib/check_mk_agent/plugins
 	use inventory && newexe plugins/mk_inventory.linux mk_inventory
 	use smart && doexe plugins/smart
-	use mysql && doexe plugins/mk_mysql
+	use mysql && doexe plugins/mk_mysql && touch mysql.cfg && doins mysql.cfg
 	use postgres && doexe plugins/mk_postgres
 	use apache_status && doexe plugins/apache_status_2.py
 	use zypper && doexe plugins/mk_zypper
