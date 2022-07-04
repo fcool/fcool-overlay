@@ -3,6 +3,7 @@ description="promtail log watcher"
 pidfile=${pidfile:-"/run/${RC_SVCNAME}.pid"}
 user=${user:-${RC_SVCNAME}}
 group=${group:-${RC_SVCNAME}}
+retry="TERM/10/KILL/5"
 
 command="/usr/bin/promtail"
 command_args="${command_args:---config.file=/etc/promtail/promtail-local-config.yaml}"
