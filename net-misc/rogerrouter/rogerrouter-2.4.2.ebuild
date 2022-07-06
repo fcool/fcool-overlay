@@ -1,14 +1,14 @@
-EAPI=6
+EAPI=7
 
 inherit eutils meson gnome2-utils xdg-utils
 
 DESCRIPTION="Manage your FRITZ!Box or compatible router"
 HOMEPAGE="https://www.tabos.org/"
-SRC_URI="https://gitlab.com/tabos/${PN}/-/archive/v${PV}/${PN}-v${PV}.tar.gz"
+SRC_URI="https://gitlab.com/tabos/${PN}/-/archive/${PV}/${PN}-${PV}.tar.gz"
 LICENSE="GPL-2"
 SLOT=0
 KEYWORDS="~x86 ~amd64"
-S="${WORKDIR}/${PN}-v${PV}"
+#S="${WORKDIR}/${PN}-v${PV}"
 
 IUSE="evo +appindicator"
 #TODO: Bad design: Evo ist automagic! (as are several other, appindicator for example)
@@ -17,7 +17,7 @@ DEPEND="app-text/ghostscript-gpl
     sys-devel/gettext
     dev-cpp/gtkmm:3.0
     net-libs/libsoup:2.4
-    >=net-libs/librm-2.1.4
+    >=net-libs/librm-2.2.3
     appindicator? ( dev-libs/libappindicator:3 )
     dev-libs/glib:2
     >=media-libs/tiff-4.0

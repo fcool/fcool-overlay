@@ -1,15 +1,14 @@
-EAPI=6
+EAPI=7
 
 inherit eutils meson gnome2-utils
 
 DESCRIPTION="Router Manager library"
 HOMEPAGE="https://www.tabos.org/"
-SRC_URI="https://git.krueger-it.net/tabos.org/librm/-/archive/v${PV}/librm-v${PV}.tar.gz"
-
+SRC_URI="https://gitlab.com/tabos/librm/-/archive/${PV}/librm-${PV}.tar.gz"
 LICENSE="GPL-2"
 SLOT=0
 KEYWORDS="~x86 ~amd64"
-S="${WORKDIR}/${PN}-v${PV}"
+#S="${WORKDIR}/${PN}-v${PV}"
 IUSE="doc test +libsecret"
 
 DEPEND="dev-libs/glib:2
