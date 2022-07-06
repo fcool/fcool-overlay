@@ -2,11 +2,13 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils
+EAPI=7
+
+inherit autotools
 
 DESCRIPTION="Library, input driver, and utilities for the Nintendo Wiimote"
-HOMEPAGE="http://abstrakraft.org/cwiid"
-SRC_URI="http://abstrakraft.org/cwiid/downloads/${P}.tgz"
+HOMEPAGE="https://github.com/abstrakraft/cwiid"
+SRC_URI="https://github.com/abstrakraft/${PN}/archive/${PN}-${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -18,8 +20,15 @@ DEPEND="sys-apps/gawk
 	>=sys-devel/flex-2.5.33
 	=x11-libs/gtk+-2*
 	>=sys-kernel/linux-headers-2.6
-	net-wireless/bluez-libs
-	python? ( >=dev-lang/python-2.4 )"
+	net-wireless/bluez
+	python? ( dev-lang/python:2.7 )"
+
+S="${WORKDIR}/${PN}-${P}"
+
+src_prepare() {
+        default
+        eautoreconf
+}
 
 src_compile() {
 	econf $(use_with python) --disable-ldconfig || die "died running econf"
