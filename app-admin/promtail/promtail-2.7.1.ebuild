@@ -5,7 +5,7 @@ EAPI=7
 
 EGO_PN="github.com/grafana/loki"
 
-inherit user golang-vcs-snapshot
+inherit golang-vcs-snapshot
 
 KEYWORDS="~amd64"
 DESCRIPTION="Promtail sends logs to a loki instance"

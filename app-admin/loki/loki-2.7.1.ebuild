@@ -5,7 +5,7 @@ EAPI=7
 
 EGO_PN="github.com/grafana/loki"
 
-inherit user golang-vcs-snapshot
+inherit golang-vcs-snapshot
 
 KEYWORDS="~amd64"
 DESCRIPTION="Like Prometheus, but for logs."
@@ -15,15 +15,12 @@ SRC_URI="https://github.com/grafana/loki/archive/v${PV}.tar.gz -> ${P}.tar.gz
 LICENSE="Apache-2.0"
 SLOT="0"
 IUSE=""
-BDEPEND="
-	=dev-lang/go-1.17*
-"
+COMMON_DEPEND="acct-group/loki
+        acct-user/loki"
 
-pkg_setup() {
-	enewgroup ${PN}
-	enewuser ${PN} -1 -1 -1 ${PN}
-}
-
+BDEPEND="=dev-lang/go-1.19*"
+DEPEND="${COMMON_DEPEND}"
+RDEPEND="${COMMON_DEPEND}"
 
 src_compile() {
 	debug-print-function ${FUNCNAME} "$@"
