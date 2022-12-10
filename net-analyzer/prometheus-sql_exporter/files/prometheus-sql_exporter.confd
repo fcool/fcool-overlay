@@ -1,2 +1,0 @@
-# arguments for prometheus sql exporter
-command_args="--config.file=/etc/prometheus/sql_exporter/sql_exporter.yml"
