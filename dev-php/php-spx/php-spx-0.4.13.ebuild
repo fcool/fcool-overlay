@@ -33,7 +33,7 @@ src_install() {
         php-ext-source-r3_addtoinifiles ";spx.http_key" ""
         php-ext-source-r3_addtoinifiles ";spx.http_ip_var" ""
         php-ext-source-r3_addtoinifiles ";spx.http_trusted_proxies" ""
-        php-ext-source-r3_addtoinifiles "spx.http_ip_whitelist" "127.0.0.1"
+        php-ext-source-r3_addtoinifiles "spx.http_ip_whitelist" "127.0.0.1,::1"
         php-ext-source-r3_addtoinifiles ";spx.http_ui_assets_dir" "$PHPPREFIX/share/misc/php-spx/assets/web-ui"
         php-ext-source-r3_addtoinifiles ";spx.http_profiling_enabled" "NULL"
         php-ext-source-r3_addtoinifiles ";spx.http_profiling_auto_start" "NULL"
