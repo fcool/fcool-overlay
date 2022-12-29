@@ -9,6 +9,7 @@ MY_P="${PN/pecl-/}-${PV/_rc/RC}"
 PHP_EXT_ECONF_ARGS=()
 PHP_EXT_PECL_FILENAME="${MY_P}.tgz"
 PHP_EXT_S="${WORKDIR}/${MY_P}"
+PHP_EXT_NEEDED_USE="-threads"
 
 inherit php-ext-source-r3
 
@@ -19,7 +20,6 @@ SLOT="0"
 KEYWORDS="amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~s390 ~sparc ~x86"
 SRC_URI="https://github.com/NoiseByNorthwest/php-spx/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
-PHP_EXT_NEEDED_USE="-threads"
 DEPEND=">=sys-libs/zlib-1.2"
 RDEPEND="${DEPEND}"
 
