@@ -1,10 +1,10 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
 MY_PV="${PV/rc/RC}"
-USE_PHP="php7-0 php7-1 php7-2"
+USE_PHP="php7-4 php8-0"
 PHP_EXT_NAME="meminfo"
 S=${WORKDIR}/${PN}-${PV}/extension/php7
 
