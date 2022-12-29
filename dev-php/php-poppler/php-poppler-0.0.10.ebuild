@@ -10,27 +10,13 @@ USE_PHP="php7-4"
 MY_PN="php-poppler"
 S=${WORKDIR}/${MY_PN}
 
-
 inherit php-ext-source-r3
-#inherit eutils
-# A well-used example of an eclass function that needs eutils is epatch. If
-# your source needs patches applied, it's suggested to put your patch in the
-# 'files' directory and use:
-#
-#   epatch "${FILESDIR}"/patch-name-here
-#
-# eclasses tend to list descriptions of how to use their functions properly.
-# take a look at /usr/portage/eclass/ for more examples.
 
 DESCRIPTION="The php-poppler is a binding to the poppler pdf library"
 HOMEPAGE="http://www.digital-competence.de/php-poppler"
-
-#SRC_URI="https://api.github.com/repos/CopernicaMarketingSoftware/PHP-CPP/tarball/v${PV}  -> ${P}.tgz"
 SRC_URI="http://www.digital-competence.de/php-poppler/${P}.tgz"
 LICENSE="Apache-2.0"
-
 SLOT="0"
-
 KEYWORDS="amd64"
 DEPEND=">=dev-php/phpcpp-1.3.1:= >=app-text/poppler-22.03:=[png,tiff] php_targets_php7-4? ( dev-php/phpcpp:1[php_targets_php7-4] )"
 RDEPEND="${DEPEND}"

@@ -10,7 +10,7 @@ USE_PHP="php7-4"
 MY_PN="PHP-CPP"
 S=${WORKDIR}/${MY_PN}-${PV}
 
-inherit eutils php-ext-source-r3
+inherit php-ext-source-r3
 
 DESCRIPTION="The PHP-CPP library is a C++ library for developing PHP extensions"
 HOMEPAGE="http://www.php-cpp.com/"
