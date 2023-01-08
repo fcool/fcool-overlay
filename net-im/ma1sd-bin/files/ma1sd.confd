@@ -1,0 +1,6 @@
+# /etc/conf.d/ma1sd: config file for /etc/init.d/ma1sd
+#
+# Options to pass to the ma1sd daemon.
+# See ma1sd -h for more info.
+
+command_args=""
