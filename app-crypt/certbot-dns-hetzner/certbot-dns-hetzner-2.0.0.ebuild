@@ -22,6 +22,13 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="amd64 ~ppc64"
 
-RDEPEND=""
+# TODO: as long as we do not support python2.7 this is fine.
+# If we would need to support python 2 we had another dep: dev-python/parsedatetime
+
+RDEPEND=">=dev-python/dns-lexicon-3.11.6
+    >=app-crypt/certbot-2.0.0
+    dev-python/requests
+    dev-python/requests-mock
+"
 
 distutils_enable_tests unittest
