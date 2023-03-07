@@ -18,7 +18,7 @@ IUSE=""
 COMMON_DEPEND="acct-group/loki
         acct-user/loki"
 
-BDEPEND="=dev-lang/go-1.19*"
+BDEPEND=">=dev-lang/go-1.19.0"
 DEPEND="${COMMON_DEPEND}"
 RDEPEND="${COMMON_DEPEND}"
 

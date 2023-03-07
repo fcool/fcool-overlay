@@ -16,7 +16,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 IUSE="systemd"
 DEPEND="systemd? ( sys-apps/systemd )"
-BDEPEND="=dev-lang/go-1.19*"
+BDEPEND=">=dev-lang/go-1.19.0"
 
 src_compile() {
 	debug-print-function ${FUNCNAME} "$@"
