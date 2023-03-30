@@ -34,8 +34,6 @@ src_compile() {
 		go build -v -work -x ${EGO_BUILD_FLAGS} ./src/${EGO_PN}/clients/cmd/promtail
 	echo "$@"
 	"$@" || die
-	
-	sed -i "s/\/tmp\//\/var\/lib\/promtail\//" ./src/${EGO_PN}/cmd/promtail/promtail-local-config.yaml
 }
 
 src_install() {
