@@ -12,7 +12,7 @@ EGIT_COMMIT="6a57c1449797d6cb915921fb747f3ac36199241f"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm64"
 IUSE="ssl iconv glib tiff"
 
 RDEPEND="sys-libs/zlib
