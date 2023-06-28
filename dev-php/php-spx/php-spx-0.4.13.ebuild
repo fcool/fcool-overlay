@@ -17,7 +17,7 @@ DESCRIPTION="A simple & straight-to-the-point PHP profiling extension with its b
 HOMEPAGE="https://github.com/NoiseByNorthwest/php-spx"
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~s390 ~sparc ~x86"
+KEYWORDS="amd64 ~arm arm64 ~ hppa ~ia64 ~ppc ~ppc64 ~s390 ~sparc x86"
 SRC_URI="https://github.com/NoiseByNorthwest/php-spx/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 DEPEND=">=sys-libs/zlib-1.2"
