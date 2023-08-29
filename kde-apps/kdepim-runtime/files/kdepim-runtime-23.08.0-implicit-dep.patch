@@ -1,0 +1,22 @@
+--- kdepim-runtime-23.08.0.orig/CMakeLists.txt  2023-08-29 09:48:32.243703741 +0200
++++ kdepim-runtime-23.08.0/CMakeLists.txt       2023-08-29 09:51:22.618749998 +0200
+@@ -112,7 +112,7 @@
+ if(Qt${QT_MAJOR_VERSION}TextToSpeech_FOUND)
+ set(HAVE_TEXT_TO_SPEECH_SUPPORT TRUE)
+ endif()
+-find_package(Qt${QT_MAJOR_VERSION} ${QT_REQUIRED_VERSION} CONFIG REQUIRED Network Widgets Test DBus NetworkAuth)
++find_package(Qt${QT_MAJOR_VERSION} ${QT_REQUIRED_VERSION} CONFIG REQUIRED Network Widgets Concurrent Test DBus NetworkAuth)
+ if (QT_MAJOR_VERSION STREQUAL "5" AND BUILD_TESTING)
+     find_package(Qt5 ${QT_REQUIRED_VERSION} CONFIG REQUIRED XmlPatterns)
+ endif()
+diff -ru kdepim-runtime-23.08.0.orig/resources/etesync/CMakeLists.txt kdepim-runtime-23.08.0/resources/etesync/CMakeLists.txt
+--- kdepim-runtime-23.08.0.orig/resources/etesync/CMakeLists.txt        2023-08-29 09:48:32.017030391 +0200
++++ kdepim-runtime-23.08.0/resources/etesync/CMakeLists.txt     2023-08-29 09:51:54.499691388 +0200
+@@ -52,6 +52,7 @@
+ target_link_libraries(akonadi_etesync_resource
+     ${ETEBASE_LIBRARIES}
+     Qt::DBus
++    Qt::Concurrent
+     KPim${KF_MAJOR_VERSION}::AkonadiAgentBase
+     KF${KF_MAJOR_VERSION}::ConfigCore
+     KF${KF_MAJOR_VERSION}::Contacts
