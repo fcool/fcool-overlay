@@ -21,7 +21,7 @@ RESTRICT="test"
 
 BDEPEND=""
 DEPEND="
-	dev-libs/futuresql
+	dev-db/futuresql5
 	dev-libs/kirigami-addons
 	dev-python/pybind11
 	dev-python/ytmusicapi
