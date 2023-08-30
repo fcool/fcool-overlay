@@ -1,6 +1,6 @@
 EAPI=7
 
-inherit eutils meson gnome2-utils xdg-utils
+inherit meson gnome2-utils xdg-utils
 
 DESCRIPTION="Manage your FRITZ!Box or compatible router"
 HOMEPAGE="https://www.tabos.org/"

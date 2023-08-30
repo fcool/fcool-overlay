@@ -1,6 +1,6 @@
 EAPI=7
 
-inherit eutils meson gnome2-utils
+inherit meson gnome2-utils
 
 DESCRIPTION="Router Manager library"
 HOMEPAGE="https://www.tabos.org/"
