@@ -1,0 +1,9 @@
+# /etc/conf.d/mailpit: config file for /etc/init.d/mailpit
+#
+# Options to pass to the numad daemon.
+# See the MailHog -h for more info.
+
+SMTP_BIND_ADDR="[::]:1025"
+HTTP_BIND_ADDR="[::]:8025"
+MAX_MESSAGES_IN_STORE="500"
+LOG_FILE=/var/log/mailpit.log

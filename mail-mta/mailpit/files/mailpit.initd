@@ -1,0 +1,12 @@
+#!/sbin/openrc-run
+command=/usr/bin/mailpit
+command_args="--smtp ${SMTP_BIND_ADDR} --listen ${HTTP_BIND_ADDR} --max ${MAX_MESSAGES_IN_STORE}"
+command_background="true"
+output_log="${LOG_FILE}"
+error_log="${LOG_FILE}"
+pidfile=/run/mailpit.pid
+
+depend() {
+        use net
+        after logger
+}
