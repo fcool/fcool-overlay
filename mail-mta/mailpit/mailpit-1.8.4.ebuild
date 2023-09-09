@@ -17,8 +17,8 @@ KEYWORDS="amd64 arm64"
 SLOT="0"
 
 src_compile() {
-        npm run build
-	ego build
+        npm run package
+	ego build -ldflags "-s -w -X github.com/axllent/mailpit/config.Version=v${PV}"
 }
 
 src_install() {
