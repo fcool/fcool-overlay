@@ -1,0 +1,12 @@
+diff -ru zeal-994cc5f6b6bfffddd5faaaafdb4fed483c38188f/src/libs/core/settings.cpp zeal-994cc5f6b6bfffddd5faaaafdb4fed483c38188f-patched/src/libs/core/settings.cpp
+--- zeal-994cc5f6b6bfffddd5faaaafdb4fed483c38188f/src/libs/core/settings.cpp	2020-08-15 21:50:12.000000000 +0200
++++ zeal-994cc5f6b6bfffddd5faaaafdb4fed483c38188f-patched/src/libs/core/settings.cpp	2023-09-25 07:34:49.924026717 +0200
+@@ -67,7 +67,7 @@
+ 
+     // TODO: Put everything in groups
+     startMinimized = settings->value(QStringLiteral("start_minimized"), false).toBool();
+-    checkForUpdate = settings->value(QStringLiteral("check_for_update"), true).toBool();
++    checkForUpdate = settings->value(QStringLiteral("check_for_update"), false).toBool();
+ 
+     showSystrayIcon = settings->value(QStringLiteral("show_systray_icon"), true).toBool();
+     minimizeToSystray = settings->value(QStringLiteral("minimize_to_systray"), false).toBool();
