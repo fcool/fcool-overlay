@@ -3,7 +3,7 @@
 
 EAPI=8
 
-COMMIT=994cc5f6b6bfffddd5faaaafdb4fed483c38188f
+COMMIT=90ad776e83f182221cafd329f2e58cf0621ea3f1
 inherit cmake xdg-utils
 
 DESCRIPTION="Offline documentation browser inspired by Dash"
@@ -19,15 +19,10 @@ IUSE=""
 DEPEND="
 	app-arch/libarchive:=
 	dev-db/sqlite:3
-	dev-qt/qtconcurrent:5
-	dev-qt/qtcore:5
-	dev-qt/qtgui:5
-	dev-qt/qtnetwork:5
-	dev-qt/qtsql:5[sqlite]
-	dev-qt/qtwebchannel:5
-	dev-qt/qtwebengine:5[widgets]
-	dev-qt/qtwidgets:5
-	dev-qt/qtx11extras:5
+	dev-qt/qtbase:6
+	dev-qt/qtconnectivity:6
+	dev-qt/qtwebchannel:6
+	dev-qt/qtwebengine:6[widgets]
 	x11-libs/libX11
 	x11-libs/libxcb:=
 	>=x11-libs/xcb-util-keysyms-0.3.9
@@ -38,7 +33,7 @@ RDEPEND="${DEPEND}
 BDEPEND="kde-frameworks/extra-cmake-modules:5"
 
 PATCHES=(
-	"${FILESDIR}/${P}-fix-sidebar-static-lib.patch"
+	"${FILESDIR}/0002-settings-disable-checking-for-updates-by-default.patch"
 )
 
 pkg_postinst() {
