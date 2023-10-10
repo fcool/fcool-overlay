@@ -1,4 +1,4 @@
-# Copyright 1999-2022 Gentoo Authors
+# Copyright 1999-2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -7,7 +7,8 @@ inherit go-module
 DESCRIPTION="Command-line interface for woodpecker"
 HOMEPAGE="https://github.com/woodpecker-ci/woodpecker"
 
-SRC_URI="https://github.com/woodpecker-ci/woodpecker/archive/v${PV}.tar.gz -> ${P}.tar.gz https://digital-competence.de/woodpecker-cli/woodpecker-cli-1.0.1-vendor.tar.xz"
+SRC_URI="https://github.com/woodpecker-ci/woodpecker/archive/v${PV}.tar.gz -> ${P}.tar.gz
+         https://digital-competence.de/fcool-overlay/woodpecker-cli-${PV}-vendor.tar.xz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
