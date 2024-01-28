@@ -646,8 +646,6 @@ CRATES="
 	zstd-sys@2.0.9+zstd.1.5.5
 "
 
-RUSTY_V8="0.82.0"
-
 inherit cargo readme.gentoo-r1
 
 DESCRIPTION="Provides the deno executable"
@@ -655,7 +653,6 @@ DESCRIPTION="Provides the deno executable"
 # does not provide this value so instead repository is used
 HOMEPAGE="https://github.com/denoland/deno"
 SRC_URI="https://github.com/denoland/deno/archive/v${PV}.tar.gz -> ${P}.tar.gz"
-SRC_URI+=" https://digital-competence.de/fcool-overlay/rusty-v8-v${RUSTY_V8}.tar.xz"
 SRC_URI+=" ${CARGO_CRATE_URIS}"
 
 # License set may be more restrictive as OR is not respected
@@ -666,7 +663,11 @@ KEYWORDS="~amd64"
 
 DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""
+BDEPEND="
+	=sys-devel/llvm-17*
+	>=dev-build/ninja-1.11
+	>=dev-build/gn-0.2114
+	"
 
 # rust does not use *FLAGS from make.conf, silence portage warning
 # update with proper path to binaries this crate installs, omit leading /
@@ -680,7 +681,10 @@ See also /usr/share/doc/${PF}/README.md.
 
 src_compile() {
 	cd cli
-	export RUSTY_V8_MIRROR="$S/rusty-v8"
+        export V8_FROM_SOURCE=1
+        export CLANG_BASE_PATH="/usr/lib/llvm/17/"
+        export GN="/usr/bin/gn"
+        export NINJA="/usr/bin/ninja"
 	cargo_src_compile
 }
 
