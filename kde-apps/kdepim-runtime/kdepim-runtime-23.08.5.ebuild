@@ -12,11 +12,10 @@ inherit ecm gear.kde.org
 
 DESCRIPTION="Runtime plugin collection to extend the functionality of KDE PIM"
 HOMEPAGE="https://apps.kde.org/kontact/"
-SRC_URI+=" https://dev.gentoo.org/~asturm/distfiles/${P}-gdrive-fix.tar.xz"
 
 LICENSE="GPL-2+ LGPL-2.1+"
 SLOT="5"
-KEYWORDS="~amd64 ~arm64 ~ppc64 ~x86"
+KEYWORDS="amd64 ~arm64 ~ppc64 x86"
 IUSE="speech etesync"
 
 RESTRICT="test"
@@ -71,7 +70,7 @@ RDEPEND="
 	>=kde-frameworks/kwindowsystem-${KFMIN}:5
 	>=kde-frameworks/kxmlgui-${KFMIN}:5
 	speech? ( >=dev-qt/qtspeech-${QTMIN}:5 )
-        etesync? ( >=net-libs/libetebase-0.5.0 )
+	etesync? ( >=net-libs/libetebase-0.5.0 )
 "
 DEPEND="${RDEPEND}
 	test? (
@@ -82,7 +81,6 @@ DEPEND="${RDEPEND}
 
 PATCHES=(
         "${FILESDIR}"/${PN}-23.08.0-implicit-dep.patch
-        "${WORKDIR}/${P}-gdrive-fix" # KDE-bug 470820
 )
 
 src_configure() {
