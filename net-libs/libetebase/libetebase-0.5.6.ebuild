@@ -185,17 +185,17 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 src_compile () {
-        default
-        mv target/release/libetebase.so target/release/libetebase.so.0
-        ln -s libetebase.so.0 target/release/libetebase.so
+	default
+	emake pkgconfig
+	mv target/$(usex debug "debug" "release")/libetebase.so target/release/libetebase.so.0
+	ln -s libetebase.so.0 target/$(usex debug "debug" "release")/libetebase.so
 }
 
 src_install () {
-        insinto /usr/$(get_libdir)/pkgconfig
-        doins target/etebase.pc
-        insinto /usr/$(get_libdir)/cmake/Etebase
-        doins EtebaseConfig.cmake
-        insinto /usr/include/etebase
-        doins target/etebase.h
-        dolib.so target/release/libetebase.so{,.0}
+	insinto /usr/$(get_libdir)/pkgconfig
+	doins target/etebase.pc
+	insinto /usr/$(get_libdir)/cmake/Etebase
+	doins EtebaseConfig.cmake
+	doheader target/etebase.h
+	dolib.so target/$(usex debug "debug" "release")/libetebase.so{,.0}
 }
