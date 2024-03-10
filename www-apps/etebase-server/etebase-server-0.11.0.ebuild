@@ -27,7 +27,7 @@ RDEPEND="
 		>=dev-python/fastapi-0.88.0[${PYTHON_USEDEP}]
 		>=dev-python/httptools-0.5.0[${PYTHON_USEDEP}]
 		>=dev-python/msgpack-1.0.4[${PYTHON_USEDEP}]
-		<dev-python/pydantic-2.0.0[${PYTHON_USEDEP}]
+		>=dev-python/pydantic-1.10.0[${PYTHON_USEDEP}]
 		>=dev-python/pynacl-1.5.0[${PYTHON_USEDEP}]
 		>=dev-python/python-dotenv-0.21.0[${PYTHON_USEDEP}]
 		>=dev-python/pytz-2022.6[${PYTHON_USEDEP}]
@@ -44,6 +44,9 @@ RDEPEND="
 
 src_prepare() {
 	sed -e "s:secret.txt:${EPREFIX}/var/lib/${PN}/&:" -e "s:db.sqlite3:${EPREFIX}/var/lib/${PN}/&:" -e "s:/path/to/static:${EPREFIX}/var/lib/${PN}/static/:" -e "s:/path/to/media:${EPREFIX}/var/lib/${PN}/media/:" -i "${S}/${PN}.ini.example" || die
+	# Make compatbile with pydantic 2.x
+	sed -e "s~from pydantic import \(.*\)~try:\n  from pydantic.v1 import \1\nexcept:\n  from pydantic import \1~" -i etebase_server/fastapi/*.py
+
 	default
 }
 
