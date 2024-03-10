@@ -32,7 +32,6 @@ RDEPEND="
 		>=dev-python/fastapi-0.88.0[${PYTHON_USEDEP}]
 		>=dev-python/httptools-0.5.0[${PYTHON_USEDEP}]
 		>=dev-python/msgpack-1.0.4[${PYTHON_USEDEP}]
-		>=dev-python/pydantic-1.10.0[${PYTHON_USEDEP}]
 		>=dev-python/pynacl-1.5.0[${PYTHON_USEDEP}]
 		>=dev-python/python-dotenv-0.21.0[${PYTHON_USEDEP}]
 		>=dev-python/pytz-2022.6[${PYTHON_USEDEP}]
