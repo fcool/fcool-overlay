@@ -7,10 +7,15 @@ PYTHON_COMPAT=( python3_{10,11} )
 
 inherit python-single-r1 systemd wrapper
 
+PYDANTIC_VERSION="1.10.14"
+
 DESCRIPTION="The Etebase server"
 HOMEPAGE="https://www.etesync.com https://github.com/etesync/server"
 SRC_URI="https://github.com/etesync/server/archive/${PV}.tar.gz -> ${P}.tar.gz"
-
+SRC_URI+="
+        https://github.com/pydantic/pydantic/archive/v${PYDANTIC_VERSION/_beta/b}.tar.gz
+                -> pydantic-${PYDANTIC_VERSION}.gh.tar.gz
+"
 LICENSE="AGPL-3"
 KEYWORDS="~amd64"
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
@@ -56,6 +61,7 @@ src_install() {
 	newins ${PN}.ini.example ${PN}.ini
 	rm -r ChangeLog.md ${PN}.ini.example icon.svg LICENSE README.md .github .gitignore || die
 	python_fix_shebang manage.py
+	mv ${WORKDIR}/pydantic-${PYDANTIC_VERSION}/pydantic .
 	insinto /usr/$(get_libdir)/${PN}
 	doins -r .
 	fperms 755 /usr/$(get_libdir)/${PN}/manage.py
