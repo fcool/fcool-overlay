@@ -1,0 +1,15 @@
+#!/sbin/openrc-run
+# Copyright 1999-2021 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+USER=${ETEBASE_USER:-etebase}
+GROUP=${ETEBASE_GROUP:-etebase}
+command=/usr/bin/uvicorn
+command_args="etebase_server.asgi:application --app-dir /usr/@LIBDIR@/etebase-server"
+command_args+=" --port ${ETEBASE_PORT:-8000} --host ${ETEBASE_HOST:-127.0.0.1}"
+pidfile="${ETEBASE_PIDFILE:-/run/etebase-server.pid}"
+command_background=true
+command_user="${USER}:${GROUP}"
+
+output_log=${ETEBASE_LOGFILE:-/var/log/etebase/stdout.log}
+error_log=${ETEBASE_LOGFILE_ERROR:-/var/log/etebase/stderr.log}

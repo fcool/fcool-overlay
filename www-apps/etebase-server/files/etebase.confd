@@ -1,0 +1,13 @@
+#/etc/conf.d/etebase-server
+
+# Address server will listen on
+#ETEBASE_HOST=127.0.0.1
+
+# Port server will listen on
+#ETEBASE_PORT=8000
+
+#ETEBASE_USER=etebase
+#ETEBASE_GROUP=etebase
+#ETEBASE_PIDFILE=/run/etebase-server.pid
+#ETEBASE_LOGFILE=/var/log/etebase/stdout.log
+#ETEBASE_LOGFILE_ERROR=/var/log/etebase/stderr.log

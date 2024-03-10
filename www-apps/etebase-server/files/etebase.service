@@ -1,0 +1,8 @@
+[Unit]
+Description=Execute the etebase server.
+
+[Service]
+ExecStart=/usr/bin/uvicorn etebase_server.asgi:application --app-dir /usr/@LIBDIR@/etebase-server --port 8000 --host 127.0.0.1
+
+[Install]
+WantedBy=multi-user.target
