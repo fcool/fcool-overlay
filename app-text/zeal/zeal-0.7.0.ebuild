@@ -30,10 +30,11 @@ DEPEND="
 RDEPEND="${DEPEND}
 	x11-themes/hicolor-icon-theme
 "
-BDEPEND="kde-frameworks/extra-cmake-modules:5"
+BDEPEND=">=kde-frameworks/extra-cmake-modules-5"
 
 PATCHES=(
 	"${FILESDIR}/0002-settings-disable-checking-for-updates-by-default.patch"
+	"${FILESDIR}/1565-zeal-0.7.0-std-as-const.patch"
 )
 
 pkg_postinst() {
