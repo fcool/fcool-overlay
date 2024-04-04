@@ -22,7 +22,7 @@ DEPEND="dev-libs/glib:2
     libsecret? ( >=app-crypt/libsecret-0.18 )
     
     media-libs/libsndfile
-    net-libs/gupnp
+    net-libs/gupnp:0/1.2-0
     net-libs/gssdp
     net-libs/libcapi
 "
