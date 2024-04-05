@@ -1,0 +1,3 @@
+# sqlite secure delete needed by thunderbird
+dev-db/sqlite secure-delete
+media-libs/libvpx postproc

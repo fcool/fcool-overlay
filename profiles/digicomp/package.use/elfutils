@@ -1,0 +1,4 @@
+app-arch/bzip2 static-libs
+app-arch/zstd static-libs
+app-arch/xz static-libs
+sys-libs/zlib static-libs

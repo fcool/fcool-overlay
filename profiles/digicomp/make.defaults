@@ -1,0 +1,56 @@
+# sqlite
+USE="${USE} sqlite"
+
+# Disable vhosts per default
+USE="${USE} -vhosts"
+
+# Activate support for elfutils
+USE="${USE} elfutils"
+
+# Activate inotify support
+USE="${USE} inotify"
+
+# vim support
+USE="${USE} vim vim-syntax"
+
+# Activate mmap
+USE="${USE} mmap"
+
+# Activate fontconfig
+USE="${USE} fontconfig"
+
+# Activate bash-completion
+USE="${USE} bash-completion"
+
+# Activate threading support
+USE="${USE} threads"
+
+# Enable python where possible
+USE="${USE} python"
+
+# Enable LVM support where possible
+USE="${USE} lvm"
+
+# Man pages where possible
+USE="${USE} man"
+
+# Using nftables wherever possible
+USE="${USE} nftables -iptables"
+
+# compression algorithms
+USE="${USE} zstd brotli lzma"
+
+# Activate media formats
+USE="${USE} heif webp svg wmf postscript"
+
+# As we are sure to use defensive cflags, we enable custom-cflags globally
+USE="${USE} custom-cflags"
+
+# Better memory allocating by jemalloc
+USE="${USE} jemalloc"
+
+# Newer capability controls
+USE="${USE} caps"
+
+# Build dist kernels
+USE="${USE} dist-kernel"

@@ -1,0 +1,19 @@
+dev-qt/qtpositioning geoclue
+dev-qt/qtscript scripttools
+dev-qt/qtsql mysql
+
+kde-apps/akonadi sqlite tools
+kde-apps/ark zip
+kde-apps/kdemultimedia-meta gstreamer
+kde-apps/kdepim-runtime etesync
+kde-apps/kio-extras nfs
+kde-apps/krdc rdp vnc
+kde-apps/kopete otr history
+kde-apps/okular epub mobi
+
+kde-misc/kdeconnect sms mousepad
+kde-misc/krename taglib
+
+media-libs/gst-plugins-base theora
+media-plugins/gst-plugins-meta theora
+

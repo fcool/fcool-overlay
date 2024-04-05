@@ -1,0 +1,2 @@
+sci-visualization/labplot cantor excel fftw hdf5 libcerf
+sci-libs/hdf5 -threads

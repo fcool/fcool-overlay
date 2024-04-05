@@ -1,0 +1,5 @@
+net-dns/dnsmasq script
+net-misc/spice-gtk usbredir
+app-emulation/libvirt firewalld numa virt-network
+net-firewall/ipset -modules
+net-libs/gnutls tools pkcs11

@@ -1,0 +1,4 @@
+app-emulation/qemu virtfs io-uring iscsi sasl plugins nfs spice usbredir vte
+app-emulation/virt-manager sasl policykit
+net-misc/spice-gtk sasl
+

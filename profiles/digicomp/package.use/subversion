@@ -1,0 +1,2 @@
+# Allow serving subversion over apache dav
+dev-vcs/subversion apache2 perl

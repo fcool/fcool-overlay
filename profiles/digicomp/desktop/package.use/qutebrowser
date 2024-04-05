@@ -1,0 +1,5 @@
+www-client/qutebrowser pdf widevine
+dev-python/PyQt5 webchannel
+dev-python/PyQt6 webchannel
+dev-qt/qtbase egl
+

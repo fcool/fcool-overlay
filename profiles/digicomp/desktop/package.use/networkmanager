@@ -1,0 +1,4 @@
+net-misc/networkmanager modemmanager connection-sharing resolvconf
+net-vpn/networkmanager-openvpn -gtk
+net-vpn/networkmanager-pptp -gtk
+

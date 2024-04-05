@@ -1,0 +1,2 @@
+net-nds/openldap overlays -minimal
+

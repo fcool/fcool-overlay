@@ -1,0 +1,44 @@
+# Support gstreamer
+USE="${USE} gstreamer"
+
+# Support ffmpeg
+USE="${USE} ffmpeg"
+
+# Support media transfer protocol
+USE="${USE} mtp"
+
+# Support gles2
+USE="${USE} gles2"
+
+# Support vdpau
+USE="${USE} vdpau vaapi"
+
+# Support video4linux
+USE="${USE} v4l"
+
+# Support samba
+USE="${USE} samba"
+
+# Support bluray
+USE="${USE} bluray"
+
+# No gnome
+USE="${USE} -gnome"
+
+# ibus support (input japanese glyphs)
+USE="${USE} ibus"
+
+# Activate xinerama support until wayland has not finally landed
+USE="${USE} xinerama"
+
+# Activate gimp support
+USE="${USE} gimp"
+
+# Activate kde share support
+USE="${USE} share"
+
+# Activate markdown support (mainly KDE relevant)
+USE="${USE} markdown"
+
+# Activate libass
+USE="${USE} libass"

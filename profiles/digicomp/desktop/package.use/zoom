@@ -1,0 +1,2 @@
+# Activate opencl for background filter
+net-im/zoom opencl

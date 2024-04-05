@@ -1,0 +1,15 @@
+kde-frameworks/kfilemetadata taglib epub office
+kde-frameworks/kimageformats avif eps jpegxl openexr raw
+
+dev-qt/qtmultimedia gstreamer
+dev-qt/qtwayland compositor
+
+media-libs/mesa wayland
+kde-plasma/plasma-meta grub mediacenter firewall
+kde-plasma/plasma-firewall firewalld
+
+dev-util/kdevplatform -konsole
+kde-plasma/plasma-desktop gtk2 gtk3 legacy-systray
+kde-plasma/plasma-meta discover thunderbolt
+
+media-libs/phonon -vlc gstreamer
