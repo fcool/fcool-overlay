@@ -1,2 +1,2 @@
-net-nds/openldap overlays -minimal
+net-nds/openldap overlays perl -minimal
 

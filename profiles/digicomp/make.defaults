@@ -25,9 +25,6 @@ USE="${USE} bash-completion"
 # Activate threading support
 USE="${USE} threads"
 
-# Enable python where possible
-USE="${USE} python"
-
 # Enable LVM support where possible
 USE="${USE} lvm"
 
