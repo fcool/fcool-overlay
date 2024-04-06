@@ -1,2 +1,2 @@
 media-libs/libheif x265
-media-gfx/imagemagick hdri corefonts -openmp
+media-gfx/imagemagick hdri truetype corefonts -openmp svg xml

@@ -1,1 +1,1 @@
-media-video/ffmpeg amr opus theora vpx
+media-video/ffmpeg amr mp3 opus svg theora truetype x264 xvid vpx webp
