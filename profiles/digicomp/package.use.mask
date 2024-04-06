@@ -1,2 +1,2 @@
 app-eselect/eselect-php apache2
-dev-lang/php apache2 threads
+dev-lang/php apache2 threads curlwrappers
