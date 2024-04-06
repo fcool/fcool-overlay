@@ -1,5 +1,3 @@
 dev-lang/php mysql imap flash ldap mcal memlimit cli bcmath dbase doc ftp iconv inifile session sockets sqlite xmlrpc yaz zip calendar -recode dba xml expat ctype ming exif flatfile gd bzip2 pdo curl tidy xsl fdftk simplexml mysqli soap tokenizer mhash pcntl posix json hash sysvipc filter -curlwrappers sharedext xpm ldap-sasl fpm sqlite3 suhosin xmlreader xmlwriter snmp sharedmem intl gmp sodium truetype unicode gd
 
-<dev-lang/php-7.5 ssl-compat
-
 <dev-lang/php-7.3 -intl -tidy -imap
