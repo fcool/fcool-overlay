@@ -1,3 +1,4 @@
 www-client/chromium -custom-cflags widevine
 net-libs/nodejs inspector
 virtual/rust profiler
+dev-lang/rust profiler
