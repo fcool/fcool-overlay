@@ -6,6 +6,7 @@ kde-apps/akonadi sqlite tools
 kde-apps/ark zip
 kde-apps/kdemultimedia-meta gstreamer
 kde-apps/kdepim-runtime etesync
+kde-apps/kdeutils-meta gpg
 kde-apps/kio-extras nfs
 kde-apps/krdc rdp vnc
 kde-apps/kopete otr history

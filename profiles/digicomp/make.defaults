@@ -1,3 +1,6 @@
+# Enable cryptsetup
+USE="${USE} cryptsetup"
+
 # sqlite
 USE="${USE} sqlite"
 
