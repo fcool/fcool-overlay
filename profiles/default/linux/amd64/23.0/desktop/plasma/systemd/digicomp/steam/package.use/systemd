@@ -1,4 +1,5 @@
 sys-apps/systemd abi_x86_32
 dev-libs/libgcrypt abi_x86_32
+dev-libs/libgpg-error abi_x86_32
 app-arch/lz4 abi_x86_32
 dev-libs/elfutils abi_x86_32
