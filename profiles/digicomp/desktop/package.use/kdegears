@@ -9,6 +9,7 @@ kde-apps/kdepim-runtime etesync
 kde-apps/kio-extras nfs
 kde-apps/krdc rdp vnc
 kde-apps/kopete otr history
+kde-apps/ksystemlog kdesu
 kde-apps/okular epub mobi
 
 kde-misc/kdeconnect sms mousepad

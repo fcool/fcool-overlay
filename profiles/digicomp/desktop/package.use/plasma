@@ -9,6 +9,7 @@ kde-plasma/plasma-meta grub mediacenter firewall
 kde-plasma/plasma-firewall firewalld
 
 dev-util/kdevplatform -konsole
+kde-plasma/kde-cli-tools kdesu
 kde-plasma/plasma-desktop gtk2 gtk3 legacy-systray
 kde-plasma/plasma-meta discover thunderbolt
 
