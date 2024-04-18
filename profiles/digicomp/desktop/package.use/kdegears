@@ -19,3 +19,7 @@ kde-misc/krename taglib
 media-libs/gst-plugins-base theora
 media-plugins/gst-plugins-meta theora
 
+# required by media-libs/sdl2-ttf-2.20.2::gentoo
+# required by net-misc/freerdp-3.4.0-r11::gentoo[sdl]
+# required by kde-apps/krdc-23.08.5::gentoo[rdp]
+>=media-libs/freetype-2.13.2 harfbuzz

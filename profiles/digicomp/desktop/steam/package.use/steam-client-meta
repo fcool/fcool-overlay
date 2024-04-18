@@ -2,165 +2,132 @@ games-util/steam-client-meta trayicon
 x11-base/xwayland libei
 
 # required by games-util/steam-client-meta-0-r20231231::steam-overlay
-# required by steam-client-meta (argument)
 >=media-libs/fontconfig-2.14.2-r3 abi_x86_32
 # required by games-util/steam-client-meta-0-r20231231::steam-overlay
-# required by steam-client-meta (argument)
 >=sys-libs/libudev-compat-186-r1 abi_x86_32
 # required by games-util/steam-client-meta-0-r20231231::steam-overlay[pulseaudio]
-# required by steam-client-meta (argument)
 >=media-libs/libpulse-17.0 abi_x86_32
 # required by games-util/steam-client-meta-0-r20231231::steam-overlay[video_cards_nvidia]
-# required by steam-client-meta (argument)
 >=x11-drivers/nvidia-drivers-550.67 abi_x86_32
 # required by media-libs/mesa-24.0.4::gentoo
 # required by virtual/opengl-7.0-r2::gentoo
 # required by games-util/steam-client-meta-0-r20231231::steam-overlay
-# required by steam-client-meta (argument)
 >=media-libs/libglvnd-1.7.0 abi_x86_32
 # required by media-libs/mesa-24.0.4::gentoo[X]
 # required by virtual/opengl-7.0-r2::gentoo
 # required by games-util/steam-client-meta-0-r20231231::steam-overlay
-# required by steam-client-meta (argument)
 >=x11-libs/libX11-1.8.7 abi_x86_32
 # required by media-libs/mesa-24.0.4::gentoo[X]
 # required by virtual/opengl-7.0-r2::gentoo
 # required by games-util/steam-client-meta-0-r20231231::steam-overlay
-# required by steam-client-meta (argument)
 >=x11-libs/libXext-1.3.6 abi_x86_32
 # required by media-libs/mesa-24.0.4::gentoo[X]
 # required by virtual/opengl-7.0-r2::gentoo
 # required by games-util/steam-client-meta-0-r20231231::steam-overlay
-# required by steam-client-meta (argument)
 >=x11-libs/libxcb-1.16.1 abi_x86_32
 # required by x11-libs/libxcb-1.16.1::gentoo
 # required by media-libs/libva-2.20.0::gentoo[X]
 # required by media-libs/mesa-24.0.4::gentoo[vaapi]
 # required by virtual/opengl-7.0-r2::gentoo
 # required by games-util/steam-client-meta-0-r20231231::steam-overlay
-# required by steam-client-meta (argument)
 >=x11-libs/libXau-1.0.11 abi_x86_32
 # required by x11-libs/libxcb-1.16.1::gentoo
 # required by media-libs/libva-2.20.0::gentoo[X]
 # required by media-libs/mesa-24.0.4::gentoo[vaapi]
 # required by virtual/opengl-7.0-r2::gentoo
 # required by games-util/steam-client-meta-0-r20231231::steam-overlay
-# required by steam-client-meta (argument)
 >=x11-libs/libXdmcp-1.1.5 abi_x86_32
 # required by media-libs/libpulse-17.0::gentoo
 # required by games-util/steam-client-meta-0-r20231231::steam-overlay[pulseaudio]
-# required by steam-client-meta (argument)
 >=media-libs/libsndfile-1.2.2-r2 abi_x86_32
 # required by media-libs/libpulse-17.0::gentoo[asyncns]
 # required by games-util/steam-client-meta-0-r20231231::steam-overlay[pulseaudio]
-# required by steam-client-meta (argument)
 >=net-libs/libasyncns-0.8-r4 abi_x86_32
 # required by media-libs/libpulse-17.0::gentoo[dbus]
 # required by games-util/steam-client-meta-0-r20231231::steam-overlay[pulseaudio]
-# required by steam-client-meta (argument)
 >=sys-apps/dbus-1.15.8 abi_x86_32
 # required by media-libs/libpulse-17.0::gentoo[glib]
 # required by games-util/steam-client-meta-0-r20231231::steam-overlay[pulseaudio]
-# required by steam-client-meta (argument)
 >=dev-libs/glib-2.78.3 abi_x86_32
 # required by dev-libs/glib-2.78.3::gentoo
 # required by media-libs/libpulse-17.0::gentoo[glib]
 # required by games-util/steam-client-meta-0-r20231231::steam-overlay[pulseaudio]
-# required by steam-client-meta (argument)
 >=dev-libs/libpcre2-10.42-r2 abi_x86_32
 # required by sys-devel/llvm-17.0.6::gentoo[libffi]
 # required by media-libs/mesa-24.0.4::gentoo[llvm,llvm_slot_17]
 # required by virtual/opengl-7.0-r2::gentoo
 # required by games-util/steam-client-meta-0-r20231231::steam-overlay
-# required by steam-client-meta (argument)
 >=dev-libs/libffi-3.4.4-r4 abi_x86_32
 # required by sys-devel/llvm-17.0.6::gentoo
 # required by media-libs/mesa-24.0.4::gentoo[llvm,llvm_slot_17]
 # required by virtual/opengl-7.0-r2::gentoo
 # required by games-util/steam-client-meta-0-r20231231::steam-overlay
-# required by steam-client-meta (argument)
 >=sys-libs/zlib-1.3-r4 abi_x86_32
 # required by sys-apps/systemd-utils-254.8-r1::gentoo[udev]
 # required by virtual/libudev-251-r2::gentoo[-systemd]
 # required by sys-libs/libudev-compat-186-r1::gentoo
 # required by games-util/steam-client-meta-0-r20231231::steam-overlay
-# required by steam-client-meta (argument)
 >=sys-apps/util-linux-2.39.3-r7 abi_x86_32
 # required by media-libs/libsndfile-1.2.2-r2::gentoo[-minimal]
 # required by media-libs/libpulse-17.0::gentoo
 # required by games-util/steam-client-meta-0-r20231231::steam-overlay[pulseaudio]
-# required by steam-client-meta (argument)
 >=media-libs/flac-1.4.3 abi_x86_32
 # required by media-libs/libvorbis-1.3.7-r1::gentoo
 # required by media-libs/libsndfile-1.2.2-r2::gentoo[-minimal]
 # required by media-libs/libpulse-17.0::gentoo
 # required by games-util/steam-client-meta-0-r20231231::steam-overlay[pulseaudio]
-# required by steam-client-meta (argument)
 >=media-libs/libogg-1.3.5-r1 abi_x86_32
 # required by media-libs/libsndfile-1.2.2-r2::gentoo[-minimal]
 # required by media-libs/libpulse-17.0::gentoo
 # required by games-util/steam-client-meta-0-r20231231::steam-overlay[pulseaudio]
-# required by steam-client-meta (argument)
 >=media-libs/libvorbis-1.3.7-r1 abi_x86_32
 # required by media-libs/libsndfile-1.2.2-r2::gentoo[-minimal]
 # required by media-libs/libpulse-17.0::gentoo
 # required by games-util/steam-client-meta-0-r20231231::steam-overlay[pulseaudio]
-# required by steam-client-meta (argument)
 >=media-libs/opus-1.5.1-r1 abi_x86_32
 # required by media-libs/libsndfile-1.2.2-r2::gentoo[-minimal]
 # required by media-libs/libpulse-17.0::gentoo
 # required by games-util/steam-client-meta-0-r20231231::steam-overlay[pulseaudio]
-# required by steam-client-meta (argument)
 >=media-sound/lame-3.100-r3 abi_x86_32
 # required by media-libs/libsndfile-1.2.2-r2::gentoo[-minimal]
 # required by media-libs/libpulse-17.0::gentoo
 # required by games-util/steam-client-meta-0-r20231231::steam-overlay[pulseaudio]
-# required by steam-client-meta (argument)
 >=media-sound/mpg123-base-1.32.3 abi_x86_32
 # required by media-libs/fontconfig-2.14.2-r3::gentoo
 # required by games-util/steam-client-meta-0-r20231231::steam-overlay
-# required by steam-client-meta (argument)
 >=dev-libs/expat-2.5.0 abi_x86_32
 # required by media-libs/fontconfig-2.14.2-r3::gentoo
 # required by games-util/steam-client-meta-0-r20231231::steam-overlay
-# required by steam-client-meta (argument)
 >=media-libs/freetype-2.13.2 abi_x86_32
 # required by media-libs/freetype-2.13.2::gentoo[brotli]
 # required by media-libs/fontconfig-2.14.2-r3::gentoo
 # required by games-util/steam-client-meta-0-r20231231::steam-overlay
-# required by steam-client-meta (argument)
 >=app-arch/brotli-1.1.0 abi_x86_32
 # required by media-libs/freetype-2.13.2::gentoo[bzip2]
 # required by media-libs/fontconfig-2.14.2-r3::gentoo
 # required by games-util/steam-client-meta-0-r20231231::steam-overlay
-# required by steam-client-meta (argument)
 >=app-arch/bzip2-1.0.8-r5 abi_x86_32
 # required by media-libs/freetype-2.13.2::gentoo[png]
 # required by media-libs/fontconfig-2.14.2-r3::gentoo
 # required by games-util/steam-client-meta-0-r20231231::steam-overlay
-# required by steam-client-meta (argument)
 >=media-libs/libpng-1.6.43 abi_x86_32
 # required by dev-libs/glib-2.78.3::gentoo
 # required by media-libs/libpulse-17.0::gentoo[glib]
 # required by games-util/steam-client-meta-0-r20231231::steam-overlay[pulseaudio]
-# required by steam-client-meta (argument)
 >=virtual/libintl-0-r2 abi_x86_32
 # required by sys-libs/libudev-compat-186-r1::gentoo
 # required by games-util/steam-client-meta-0-r20231231::steam-overlay
-# required by steam-client-meta (argument)
 >=virtual/libudev-251-r2 abi_x86_32
 # required by virtual/libudev-251-r2::gentoo[-systemd]
 # required by sys-apps/util-linux-2.39.3-r7::gentoo
 # required by media-libs/fontconfig-2.14.2-r3::gentoo
 # required by games-util/steam-client-meta-0-r20231231::steam-overlay
-# required by steam-client-meta (argument)
 >=sys-apps/systemd-utils-254.8-r1 abi_x86_32
 # required by sys-apps/systemd-utils-254.8-r1::gentoo[udev]
 # required by virtual/libudev-251-r2::gentoo[-systemd]
 # required by sys-apps/util-linux-2.39.3-r7::gentoo
 # required by media-libs/fontconfig-2.14.2-r3::gentoo
 # required by games-util/steam-client-meta-0-r20231231::steam-overlay
-# required by steam-client-meta (argument)
 >=sys-libs/libcap-2.69-r1 abi_x86_32
 # required by sys-libs/libcap-2.69-r1::gentoo[pam]
 # required by sys-apps/systemd-utils-254.8-r1::gentoo[udev]
@@ -168,113 +135,125 @@ x11-base/xwayland libei
 # required by sys-apps/util-linux-2.39.3-r7::gentoo
 # required by media-libs/fontconfig-2.14.2-r3::gentoo
 # required by games-util/steam-client-meta-0-r20231231::steam-overlay
-# required by steam-client-meta (argument)
 >=sys-libs/pam-1.5.3-r1 abi_x86_32
 # required by dev-libs/glib-2.78.3::gentoo
 # required by media-libs/libpulse-17.0::gentoo[glib]
 # required by games-util/steam-client-meta-0-r20231231::steam-overlay[pulseaudio]
-# required by steam-client-meta (argument)
 >=virtual/libiconv-0-r2 abi_x86_32
 # required by games-util/steam-client-meta-0-r20231231::steam-overlay
-# required by steam-client-meta (argument)
 >=virtual/opengl-7.0-r2 abi_x86_32
 # required by virtual/opengl-7.0-r2::gentoo
 # required by games-util/steam-client-meta-0-r20231231::steam-overlay
-# required by steam-client-meta (argument)
 >=media-libs/mesa-24.0.4 abi_x86_32
 # required by media-libs/mesa-24.0.4::gentoo[llvm,llvm_slot_17]
 # required by virtual/opengl-7.0-r2::gentoo
 # required by games-util/steam-client-meta-0-r20231231::steam-overlay
-# required by steam-client-meta (argument)
 >=sys-devel/llvm-17.0.6 abi_x86_32
 # required by media-libs/mesa-24.0.4::gentoo[vaapi]
 # required by virtual/opengl-7.0-r2::gentoo
 # required by games-util/steam-client-meta-0-r20231231::steam-overlay
-# required by steam-client-meta (argument)
 >=media-libs/libva-2.20.0 abi_x86_32
 # required by media-libs/mesa-24.0.4::gentoo[vdpau]
 # required by virtual/opengl-7.0-r2::gentoo
 # required by games-util/steam-client-meta-0-r20231231::steam-overlay
-# required by steam-client-meta (argument)
 >=x11-libs/libvdpau-1.5 abi_x86_32
 # required by media-libs/mesa-24.0.4::gentoo[wayland]
 # required by virtual/opengl-7.0-r2::gentoo
 # required by games-util/steam-client-meta-0-r20231231::steam-overlay
-# required by steam-client-meta (argument)
 >=dev-libs/wayland-1.22.0 abi_x86_32
 # required by media-libs/mesa-24.0.4::gentoo
 # required by virtual/opengl-7.0-r2::gentoo
 # required by games-util/steam-client-meta-0-r20231231::steam-overlay
-# required by steam-client-meta (argument)
 >=x11-libs/libdrm-2.4.120 abi_x86_32
 # required by media-libs/mesa-24.0.4::gentoo[X]
 # required by virtual/opengl-7.0-r2::gentoo
 # required by games-util/steam-client-meta-0-r20231231::steam-overlay
-# required by steam-client-meta (argument)
 >=x11-libs/libxshmfence-1.3.2 abi_x86_32
 # required by media-libs/mesa-24.0.4::gentoo[X]
 # required by virtual/opengl-7.0-r2::gentoo
 # required by games-util/steam-client-meta-0-r20231231::steam-overlay
-# required by steam-client-meta (argument)
 >=x11-libs/libXxf86vm-1.1.5 abi_x86_32
 # required by media-libs/libva-2.20.0::gentoo[X]
 # required by media-libs/mesa-24.0.4::gentoo[vaapi]
 # required by virtual/opengl-7.0-r2::gentoo
 # required by games-util/steam-client-meta-0-r20231231::steam-overlay
-# required by steam-client-meta (argument)
 >=x11-libs/libXfixes-6.0.1 abi_x86_32
 # required by media-libs/mesa-24.0.4::gentoo[X]
 # required by virtual/opengl-7.0-r2::gentoo
 # required by games-util/steam-client-meta-0-r20231231::steam-overlay
-# required by steam-client-meta (argument)
 >=x11-libs/xcb-util-keysyms-0.4.1 abi_x86_32
 # required by sys-devel/llvm-17.0.6::gentoo[zstd]
 # required by media-libs/mesa-24.0.4::gentoo[llvm,llvm_slot_17]
 # required by virtual/opengl-7.0-r2::gentoo
 # required by games-util/steam-client-meta-0-r20231231::steam-overlay
-# required by steam-client-meta (argument)
 >=app-arch/zstd-1.5.5-r1 abi_x86_32
 # required by media-libs/mesa-24.0.4::gentoo[X]
 # required by virtual/opengl-7.0-r2::gentoo
 # required by games-util/steam-client-meta-0-r20231231::steam-overlay
-# required by steam-client-meta (argument)
 >=x11-libs/libXrandr-1.5.4 abi_x86_32
 # required by x11-libs/libXrandr-1.5.4::gentoo
 # required by media-libs/mesa-24.0.4::gentoo[X]
 # required by virtual/opengl-7.0-r2::gentoo
 # required by games-util/steam-client-meta-0-r20231231::steam-overlay
-# required by steam-client-meta (argument)
 >=x11-libs/libXrender-0.9.11 abi_x86_32
 # required by sys-devel/llvm-17.0.6::gentoo[ncurses]
 # required by media-libs/mesa-24.0.4::gentoo[llvm,llvm_slot_17]
 # required by virtual/opengl-7.0-r2::gentoo
 # required by games-util/steam-client-meta-0-r20231231::steam-overlay
-# required by steam-client-meta (argument)
 >=sys-libs/ncurses-6.4_p20230401 abi_x86_32
 # required by sys-devel/llvm-17.0.6::gentoo[xml]
 # required by media-libs/mesa-24.0.4::gentoo[llvm,llvm_slot_17]
 # required by virtual/opengl-7.0-r2::gentoo
 # required by games-util/steam-client-meta-0-r20231231::steam-overlay
-# required by steam-client-meta (argument)
 >=dev-libs/libxml2-2.12.5 abi_x86_32
 # required by dev-libs/libxml2-2.12.5::gentoo[icu]
 # required by sys-devel/llvm-17.0.6::gentoo[xml]
 # required by media-libs/mesa-24.0.4::gentoo[llvm,llvm_slot_17]
 # required by virtual/opengl-7.0-r2::gentoo
 # required by games-util/steam-client-meta-0-r20231231::steam-overlay
-# required by steam-client-meta (argument)
 >=dev-libs/icu-74.2 abi_x86_32
 # required by dev-libs/libxml2-2.12.5::gentoo[lzma]
 # required by sys-devel/llvm-17.0.6::gentoo[xml]
 # required by media-libs/mesa-24.0.4::gentoo[llvm,llvm_slot_17]
 # required by virtual/opengl-7.0-r2::gentoo
 # required by games-util/steam-client-meta-0-r20231231::steam-overlay
-# required by steam-client-meta (argument)
 >=app-arch/xz-utils-5.4.2 abi_x86_32
 # required by sys-libs/ncurses-6.4_p20230401::gentoo[gpm]
 # required by sys-devel/llvm-17.0.6::gentoo[ncurses]
 # required by media-libs/mesa-24.0.4::gentoo[llvm,llvm_slot_17]
 # required by virtual/opengl-7.0-r2::gentoo
 # required by games-util/steam-client-meta-0-r20231231::steam-overlay
-# required by steam-client-meta (argument)
 >=sys-libs/gpm-1.20.7-r6 abi_x86_32
+
+
+# required by media-libs/freetype-2.13.2::gentoo[harfbuzz]
+# required by media-libs/sdl2-ttf-2.20.2::gentoo
+# required by net-misc/freerdp-3.4.0-r11::gentoo[sdl]
+# required by kde-apps/krdc-23.08.5::gentoo[rdp]
+>=media-libs/harfbuzz-8.3.0 abi_x86_32
+# required by media-libs/harfbuzz-8.3.0::gentoo[cairo]
+# required by media-libs/freetype-2.13.2::gentoo[harfbuzz]
+# required by media-libs/sdl2-ttf-2.20.2::gentoo
+# required by net-misc/freerdp-3.4.0-r11::gentoo[sdl]
+# required by kde-apps/krdc-23.08.5::gentoo[rdp]
+>=x11-libs/cairo-1.18.0 abi_x86_32
+# required by media-libs/harfbuzz-8.3.0::gentoo[graphite]
+# required by media-libs/freetype-2.13.2::gentoo[harfbuzz]
+# required by media-libs/sdl2-ttf-2.20.2::gentoo
+# required by net-misc/freerdp-3.4.0-r11::gentoo[sdl]
+# required by kde-apps/krdc-23.08.5::gentoo[rdp]
+>=media-gfx/graphite2-1.3.14_p20210810-r3 abi_x86_32
+# required by x11-libs/cairo-1.18.0::gentoo
+# required by media-libs/harfbuzz-8.3.0::gentoo[cairo]
+# required by media-libs/freetype-2.13.2::gentoo[harfbuzz]
+# required by media-libs/sdl2-ttf-2.20.2::gentoo
+# required by net-misc/freerdp-3.4.0-r11::gentoo[sdl]
+# required by kde-apps/krdc-23.08.5::gentoo[rdp]
+>=dev-libs/lzo-2.10 abi_x86_32
+# required by x11-libs/cairo-1.18.0::gentoo
+# required by media-libs/harfbuzz-8.3.0::gentoo[cairo]
+# required by media-libs/freetype-2.13.2::gentoo[harfbuzz]
+# required by media-libs/sdl2-ttf-2.20.2::gentoo
+# required by net-misc/freerdp-3.4.0-r11::gentoo[sdl]
+# required by kde-apps/krdc-23.08.5::gentoo[rdp]
+>=x11-libs/pixman-0.43.4 abi_x86_32
