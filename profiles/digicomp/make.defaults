@@ -8,6 +8,9 @@ L10N="${L10N}
 # Now activate those, we want to have explicitly
 L10N="${L10N} de de-DE en en-US en-GB"
 
+# Enable icu
+USE=${USE} icu"
+
 # Enable cryptsetup
 USE="${USE} cryptsetup"
 
