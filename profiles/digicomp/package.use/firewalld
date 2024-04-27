@@ -1,0 +1,3 @@
+# Docker and libvirt register own rules to firewalld, as of now, 
+# they only support iptables
+net-firewall/firewalld iptables
