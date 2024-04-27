@@ -44,3 +44,6 @@ USE="${USE} markdown"
 
 # Activate libass
 USE="${USE} libass"
+
+KDEPIM_FEATURES="kmail akonadiconsole akregator kaddressbook kalarm kleopatra knotes kontact korganizer ktnef blogilo console"
+LIBREOFFICE_EXTENSIONS="presenter-console presenter-minimizer nlpsolver pdfimport scripting-beanshell scripting-javascript"
