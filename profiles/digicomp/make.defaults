@@ -156,3 +156,8 @@ APACHE2_MODULES="
         vhost_alias 
         xml2enc
 "
+
+SUEXEC_DOCROOT="/var/www"
+SUEXEC_USERDIR="htdocs"
+SUEXEC_MINUID="100"
+
