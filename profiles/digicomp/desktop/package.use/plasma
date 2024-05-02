@@ -14,3 +14,5 @@ kde-plasma/plasma-desktop gtk2 gtk3 legacy-systray
 kde-plasma/plasma-meta discover thunderbolt
 
 media-libs/phonon -vlc gstreamer
+
+kde-apps/kate-addons lspclient
