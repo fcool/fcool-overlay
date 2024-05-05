@@ -2,3 +2,4 @@ dev-lang/php xmlrpc
 dev-lang/php acl bcmath bzip2 calendar cli ctype curl exif fileinfo filter flatfile fpm ftp gd gdbm gmp iconv imap inifile intl ipv6 jit ldap ldap-sasl mhash mysql mysqli nls opcache pcntl pdo phar posix readline session sharedmem simplexml snmp soap sockets sodium spell sqlite ssl sysvipc tidy tokenizer truetype unicode webp xml xmlreader xmlwriter xpm zip zlib
 
 <dev-lang/php-7.3 -intl -tidy -imap
+app-eselect/eselect-php fpm
