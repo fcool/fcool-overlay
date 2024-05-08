@@ -1,7 +1,7 @@
-amd64 default/linux/amd64/23.0/desktop/plasma/digicomp dev
-amd64 default/linux/amd64/23.0/desktop/plasma/systemd/digicomp dev
-amd64 default/linux/amd64/23.0/desktop/plasma/digicomp/steam dev
-amd64 default/linux/amd64/23.0/desktop/plasma/systemd/digicomp/steam dev
-amd64 default/linux/amd64/23.0/hardened/digicomp dev
-amd64 default/linux/amd64/17.1/hardened/digicomp dev
-amd64 default/linux/amd64/17.1/digicomp dev
+amd64 default/linux/amd64/23.0/desktop/plasma/digicomp stable
+amd64 default/linux/amd64/23.0/desktop/plasma/systemd/digicomp stable
+amd64 default/linux/amd64/23.0/desktop/plasma/digicomp/steam stable
+amd64 default/linux/amd64/23.0/desktop/plasma/systemd/digicomp/steam stable
+amd64 default/linux/amd64/23.0/hardened/digicomp stable
+amd64 default/linux/amd64/17.1/hardened/digicomp stable
+amd64 default/linux/amd64/17.1/digicomp stable
