@@ -1,0 +1,4 @@
+# See https://bugs.gentoo.org/930404
+# movit 1.7.1 has specifically been added to resolve the dependency problem 
+# between movit and libepoxy
+=media-video/movit-1.7.1 ~amd64
