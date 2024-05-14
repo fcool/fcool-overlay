@@ -7,7 +7,7 @@ inherit go-module
 
 MY_PV="$(ver_cut 1-3)T$(ver_cut 4-7)Z"
 MY_PV=${MY_PV//./-}
-EGIT_COMMIT=9d63bb1b418f6c1bbcc8434fff5d8aba810ee5d7
+EGIT_COMMIT=b5984027386ec1e55c504d27f42ef40a189cdb55
 
 DESCRIPTION="The Object Store for AI Data Infrastructure"
 HOMEPAGE="https://github.com/minio/minio"
@@ -25,13 +25,13 @@ src_prepare() {
 	default
 	sed -i \
 		-e "s/commitTime().Format(time.RFC3339)/\"${MY_PV}\"/" \
-		-e "s/-s -w//" \
 		-e "s/+ commitID()/+ \"${EGIT_COMMIT}\"/" \
 		buildscripts/gen-ldflags.go || die
 }
 
 src_compile() {
-	go build -trimpath --ldflags "$(go run buildscripts/gen-ldflags.go $MY_PV)" -o ${PN} || die
+	export CGO_ENABLED=0
+	ego build -tags kqueue -trimpath --ldflags "$(go run buildscripts/gen-ldflags.go $MY_PV)" -o ${PN} || die
 }
 
 src_install() {
