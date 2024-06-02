@@ -44,6 +44,7 @@ CRATES="
         base16ct@0.2.0
         base32@0.4.0
         base64@0.21.7
+        base64@0.22.1
         base64-simd@0.7.0
         base64-simd@0.8.0
         base64ct@1.6.0
@@ -117,27 +118,27 @@ CRATES="
         data-url@0.3.0
         debugid@0.8.0
         deno_ast@0.38.2
-        deno_cache_dir@0.7.1
-        deno_config@0.16.3
-        deno_core@0.280.0
+        deno_cache_dir@0.10.0
+        deno_config@0.16.4
+        deno_core@0.283.0
         deno_core_icudata@0.0.73
-        deno_doc@0.135.0
-        deno_emit@0.40.3
-        deno_graph@0.75.2
-        deno_lint@0.58.4
-        deno_lockfile@0.19.0
+        deno_doc@0.137.0
+        deno_emit@0.41.0
+        deno_graph@0.77.2
+        deno_lint@0.59.1
+        deno_lockfile@0.20.0
         deno_media_type@0.1.4
         deno_native_certs@0.2.0
-        deno_npm@0.20.2
-        deno_ops@0.156.0
+        deno_npm@0.21.0
+        deno_ops@0.159.0
         deno_semver@0.5.4
         deno_task_shell@0.16.1
         deno_terminal@0.1.1
-        deno_unsync@0.3.2
+        deno_unsync@0.3.4
         deno_whoami@0.1.0
-        denokv_proto@0.5.0
-        denokv_remote@0.5.0
-        denokv_sqlite@0.5.0
+        denokv_proto@0.7.0
+        denokv_remote@0.7.0
+        denokv_sqlite@0.7.0
         der@0.7.9
         der-parser@8.2.0
         deranged@0.3.11
@@ -148,6 +149,8 @@ CRATES="
         deunicode@1.4.3
         diff@0.1.13
         digest@0.10.7
+        dirs@5.0.1
+        dirs-sys@0.4.1
         displaydoc@0.2.4
         dissimilar@1.0.4
         dlopen2@0.6.1
@@ -180,7 +183,7 @@ CRATES="
         errno-dragonfly@0.1.2
         error-code@3.2.0
         escape8259@0.5.2
-        eszip@0.69.0
+        eszip@0.70.1
         fallible-iterator@0.2.0
         fallible-streaming-iterator@0.1.9
         fancy-regex@0.10.0
@@ -310,6 +313,7 @@ CRATES="
         libloading@0.7.4
         libloading@0.8.3
         libm@0.2.8
+        libredox@0.1.3
         libsqlite3-sys@0.26.0
         libz-sys@1.1.16
         linked-hash-map@0.5.6
@@ -368,6 +372,7 @@ CRATES="
         opaque-debug@0.3.1
         open@5.1.2
         openssl-probe@0.1.5
+        option-ext@0.2.0
         ordered-float@2.10.1
         os_pipe@1.1.5
         outref@0.1.0
@@ -445,6 +450,7 @@ CRATES="
         rayon-core@1.12.1
         redox_syscall@0.2.16
         redox_syscall@0.4.1
+        redox_users@0.4.5
         ref-cast@1.0.22
         ref-cast-impl@1.0.22
         regex@1.10.4
@@ -458,6 +464,7 @@ CRATES="
         ripemd@0.1.3
         ron@0.8.1
         rsa@0.9.6
+        runtimelib@0.11.0
         rusqlite@0.29.0
         rustc-demangle@0.1.23
         rustc-hash@1.1.0
@@ -496,11 +503,13 @@ CRATES="
         serde_json@1.0.115
         serde_repr@0.1.16
         serde_urlencoded@0.7.1
-        serde_v8@0.189.0
+        serde_v8@0.192.0
         sha-1@0.10.0
         sha1@0.10.6
+        sha1_smol@1.0.0
         sha2@0.10.8
         shell-escape@0.1.5
+        shellexpand@3.1.0
         signal-hook@0.3.17
         signal-hook-registry@1.4.1
         signature@2.2.0
@@ -625,7 +634,8 @@ CRATES="
         utf8-width@0.1.7
         utf8parse@0.2.1
         uuid@1.8.0
-        v8@0.91.1
+        v8@0.92.0
+        v8_valueserializer@0.1.1
         value-trait@0.8.1
         vcpkg@0.2.15
         version_check@0.9.4
@@ -679,6 +689,7 @@ CRATES="
         windows_x86_64_msvc@0.52.4
         winreg@0.50.0
         winres@0.1.12
+        wtf8@0.1.0
         wyz@0.5.1
         x25519-dalek@2.0.1
         x509-parser@0.15.1
