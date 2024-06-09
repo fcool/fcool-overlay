@@ -1,1 +1,2 @@
 net-misc/spice-gtk gtk3
+app-emulation/libvirt virtiofsd
