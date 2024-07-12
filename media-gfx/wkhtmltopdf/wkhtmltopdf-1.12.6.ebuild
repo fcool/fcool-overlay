@@ -1,7 +1,7 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI="6"
+EAPI="8"
 
 inherit multilib git-r3 flag-o-matic
 
@@ -119,7 +119,7 @@ src_compile() {
 
 src_install() {
 	dobin ${S}/work/app/bin/wkhtmlto*
-	dolib ${S}/work/app/bin/libwkhtmltox*.so.*
+	dolib.so ${S}/work/app/bin/libwkhtmltox*.so.*
 	insinto /usr/include/wkhtmltox
 	doins ${S}/src/lib/*.h
 	doins ${S}/src/lib/*.inc
