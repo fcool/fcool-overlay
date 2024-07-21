@@ -1,0 +1,2 @@
+# Hard mask outdated rust version to guarantee correct portage resolutions
+<dev-lang/rust-1.77.0

@@ -147,7 +147,7 @@ x11-base/xwayland libei
 # required by media-libs/mesa-24.0.4::gentoo[llvm,llvm_slot_17]
 # required by virtual/opengl-7.0-r2::gentoo
 # required by games-util/steam-launcher-r20231231::steam-overlay
->=sys-devel/llvm-17.0.6 abi_x86_32
+sys-devel/llvm abi_x86_32
 # required by media-libs/mesa-24.0.4::gentoo[vaapi]
 # required by virtual/opengl-7.0-r2::gentoo
 # required by games-util/steam-launcher-r20231231::steam-overlay
