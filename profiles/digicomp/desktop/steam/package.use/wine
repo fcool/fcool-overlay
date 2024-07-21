@@ -34,13 +34,13 @@
 # required by x11-libs/gtk+-3.24.41::gentoo
 # required by net-libs/webkit-gtk-2.44.1-r410::gentoo
 # required by games-util/lutris-0.5.17::gentoo
->=virtual/rust-1.77.1 abi_x86_32
+virtual/rust abi_x86_32
 # required by virtual/rust-1.77.1::gentoo
 # required by gnome-base/librsvg-2.57.0::gentoo
 # required by x11-libs/gtk+-3.24.41::gentoo
 # required by net-libs/webkit-gtk-2.44.1-r410::gentoo
 # required by games-util/lutris-0.5.17::gentoo
->=dev-lang/rust-1.77.1 abi_x86_32
+dev-lang/rust abi_x86_32
 
 media-libs/vulkan-loader abi_x86_32
 net-libs/gnutls abi_x86_32
