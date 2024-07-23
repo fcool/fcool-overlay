@@ -714,3 +714,8 @@ net-libs/gnutls abi_x86_32
 # required by @selected
 # required by @world (argument)
 >=x11-libs/libXtst-1.2.4 abi_x86_32
+# required by x11-libs/gtk+-3.24.41::gentoo
+# required by net-im/discord-0.0.61::gentoo
+# required by @selected
+# required by @world (argument)
+>=app-accessibility/at-spi2-core-2.50.2 abi_x86_32
