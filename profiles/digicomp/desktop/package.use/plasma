@@ -1,18 +1,20 @@
-kde-frameworks/kfilemetadata taglib epub office
-kde-frameworks/kimageformats avif eps jpegxl openexr raw
+dev-util/kdevplatform -konsole
 
+dev-qt/qtbase mysql
 dev-qt/qtmultimedia gstreamer
 dev-qt/qtwayland compositor
 
-media-libs/mesa wayland
-kde-plasma/plasma-meta grub mediacenter firewall
-kde-plasma/plasma-firewall firewalld
+kde-apps/kate-addons lspclient
 
-dev-util/kdevplatform -konsole
+kde-frameworks/kfilemetadata taglib epub office
+kde-frameworks/kimageformats avif eps jpegxl openexr raw
+
+kde-plasma/plasma-firewall firewalld
+kde-plasma/plasma-meta grub mediacenter firewall
+
 kde-plasma/kde-cli-tools kdesu
 kde-plasma/plasma-desktop gtk2 gtk3 legacy-systray
 kde-plasma/plasma-meta discover thunderbolt
 
+media-libs/mesa wayland
 media-libs/phonon -vlc gstreamer
-
-kde-apps/kate-addons lspclient
