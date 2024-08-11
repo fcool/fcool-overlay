@@ -3,3 +3,4 @@ dev-lang/php acl bcmath bzip2 calendar cli ctype curl exif fileinfo filter flatf
 
 <dev-lang/php-7.3 -intl -tidy -imap
 app-eselect/eselect-php fpm
+media-libs/gd xpm
