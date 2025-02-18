@@ -1,5 +1,8 @@
 L10N="${L10N} ja"
 
+# Enable keyring
+USE="${USE} keyring"
+
 # Support zsh-completion
 USE="${USE} zsh-completion"
 
