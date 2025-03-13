@@ -11,6 +11,9 @@ L10N="${L10N} de de-DE en en-US en-GB"
 # Enable icu
 USE="${USE} icu"
 
+# Enable xxhash
+USE="${USE} xxhash"
+
 # Enable cryptsetup
 USE="${USE} cryptsetup"
 
