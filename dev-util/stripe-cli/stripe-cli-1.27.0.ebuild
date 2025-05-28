@@ -8,15 +8,14 @@ HOMEPAGE="https://github.com/stripe/stripe-cli"
 
 inherit go-module
 
-SRC_URI="https://github.com/stripe/stripe-cli/archive/v${PV}.tar.gz -> ${P}.tar.gz
-	https://digital-competence.de/fcool-overlay/${PN}-${PV}-vendor.tar.xz"
+SRC_URI="https://github.com/stripe/stripe-cli/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI+=" https://digital-competence.de/fcool-overlay/${PN}-${PV}-vendor.tar.xz"
 
 LICENSE="MIT"
 KEYWORDS="amd64 arm64"
 SLOT="0"
 
 src_compile() {
-        npm run package
 	#ego build -ldflags "-s -w -X github.com/stripe/stripe-cli/config.Version=v${PV}"
 	emake
 }
