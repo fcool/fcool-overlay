@@ -7,7 +7,7 @@ x11-base/xwayland libei
 # required by games-util/steam-launcher-r20231231::steam-overlay[pulseaudio]
 >=media-libs/libpulse-17.0 abi_x86_32
 # required by games-util/steam-launcher-r20231231::steam-overlay[video_cards_nvidia]
->=x11-drivers/nvidia-drivers-550.67 abi_x86_32
+x11-drivers/nvidia-drivers abi_x86_32
 # required by media-libs/mesa-24.0.4::gentoo
 # required by virtual/opengl-7.0-r2::gentoo
 # required by games-util/steam-launcher-r20231231::steam-overlay
