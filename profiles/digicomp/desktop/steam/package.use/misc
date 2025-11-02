@@ -1,2 +1,20 @@
 sys-libs/readline abi_x86_32
 sys-libs/gdbm abi_x86_32
+# required by media-video/ffmpeg-7.1.2::gentoo[jpegxl]
+# required by media-libs/opencv-4.11.0-r1::gentoo[ffmpeg]
+# required by media-gfx/digikam-8.7.0::gentoo
+# required by @selected
+# required by @world (argument)
+media-libs/libjxl abi_x86_32
+# required by media-libs/libjxl-0.11.1::gentoo
+# required by net-libs/webkit-gtk-2.48.5-r411::gentoo[jpegxl]
+# required by games-util/lutris-0.5.19::gentoo
+# required by @selected
+# required by @world (argument)
+dev-cpp/highway abi_x86_32
+# required by media-libs/libjxl-0.11.1::gentoo[gif]
+# required by net-libs/webkit-gtk-2.48.5-r411::gentoo[jpegxl]
+# required by games-util/lutris-0.5.19::gentoo
+# required by @selected
+# required by @world (argument)
+media-libs/giflib abi_x86_32
