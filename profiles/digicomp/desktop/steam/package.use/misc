@@ -18,15 +18,3 @@ dev-cpp/highway abi_x86_32
 # required by @selected
 # required by @world (argument)
 media-libs/giflib abi_x86_32
-# required by media-libs/mesa-25.1.9::gentoo
-# required by media-libs/gst-plugins-base-1.24.11-r1::gentoo[opengl,gles2]
-# required by gui-libs/gtk-4.18.6-r1::gentoo[gstreamer]
-# required by gui-libs/vte-common-0.80.4::gentoo
-# required by x11-libs/vte-0.80.4::gentoo
-# required by app-emulation/qemu-10.0.5::gentoo[gtk,vte]
-# required by app-emulation/libvirt-11.6.0-r2::gentoo[qemu]
-# required by app-emulation/libvirt-glib-5.0.0-r1::gentoo
-# required by app-emulation/virt-manager-5.1.0::gentoo
-# required by @selected
-# required by @world (argument)
-virtual/zlib abi_x86_32

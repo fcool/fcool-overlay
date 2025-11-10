@@ -17,3 +17,10 @@
 sys-devel/llvm abi_x86_32
 # required by sys-devel/llvm-17.0.6::gentoo[ncurses]
 >=sys-libs/ncurses-6.4_p20230401 abi_x86_32
+# required by llvm-core/llvm-20.1.8::gentoo
+# required by llvm-runtimes/compiler-rt-20.1.8::gentoo
+# required by llvm-runtimes/compiler-rt-sanitizers-20.1.8::gentoo
+# required by llvm-runtimes/clang-runtime-20.1.8::gentoo[sanitize,compiler-rt]
+# required by llvm-core/clang-20.1.8::gentoo
+# required by llvm-core/clang-toolchain-symlinks-20::gentoo
+virtual/zlib abi_x86_32
