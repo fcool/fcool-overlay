@@ -7,7 +7,7 @@ inherit perl-module
 
 DESCRIPTION="Highly flexible server for git directory version tracker"
 HOMEPAGE="https://github.com/sitaramc/gitolite"
-SRC_URI="https://milki.github.com/${PN}/${P}.tar.gz"
+SRC_URI="https://github.com/sitaramc/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
