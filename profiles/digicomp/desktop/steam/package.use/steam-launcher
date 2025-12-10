@@ -235,3 +235,16 @@ x11-drivers/nvidia-drivers abi_x86_32
 
 # required by games-util/steam-launcher-1.0.0.85-r2::steam-overlay[vulkan,video_cards_nvidia]
 >=media-libs/vulkan-loader-1.4.328.0-r1 layers
+
+
+# required by media-libs/vulkan-loader-1.4.328.0-r1::gentoo[layers]
+# required by games-util/steam-launcher-1.0.0.85-r2::steam-overlay[vulkan]
+>=media-libs/vulkan-layers-1.4.328.0 abi_x86_32
+# required by media-libs/vulkan-layers-1.4.328.0::gentoo
+# required by media-libs/vulkan-loader-1.4.328.0-r1::gentoo[layers]
+# required by games-util/steam-launcher-1.0.0.85-r2::steam-overlay[vulkan]
+>=dev-util/glslang-1.4.328.0-r1 abi_x86_32
+# required by media-libs/vulkan-layers-1.4.328.0::gentoo
+# required by media-libs/vulkan-loader-1.4.328.0-r1::gentoo[layers]
+# required by games-util/steam-launcher-1.0.0.85-r2::steam-overlay[vulkan]
+>=dev-util/vulkan-utility-libraries-1.4.328.0 abi_x86_32
