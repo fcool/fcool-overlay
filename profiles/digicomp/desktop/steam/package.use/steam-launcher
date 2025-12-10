@@ -232,3 +232,6 @@ x11-drivers/nvidia-drivers abi_x86_32
 # required by net-misc/freerdp-3.4.0-r11::gentoo[sdl]
 # required by kde-apps/krdc-23.08.5::gentoo[rdp]
 >=x11-libs/pixman-0.43.4 abi_x86_32
+
+# required by games-util/steam-launcher-1.0.0.85-r2::steam-overlay[vulkan,video_cards_nvidia]
+>=media-libs/vulkan-loader-1.4.328.0-r1 layers
