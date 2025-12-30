@@ -1,1 +1,10 @@
 media-gfx/gimp aalib jpeg2k xpm
+# required by media-libs/gegl-0.4.64-r1::gentoo
+# required by media-gfx/gimp-3.0.6::gentoo
+# required by @selected
+# required by @world (argument)
+>=media-libs/babl-0.1.116 introspection
+# required by media-gfx/gimp-3.0.6::gentoo
+# required by @selected
+# required by @world (argument)
+>=media-libs/gegl-0.4.64-r1 introspection
