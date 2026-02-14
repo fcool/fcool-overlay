@@ -23,3 +23,5 @@ media-plugins/gst-plugins-meta theora
 # required by net-misc/freerdp-3.4.0-r11::gentoo[sdl]
 # required by kde-apps/krdc-23.08.5::gentoo[rdp]
 >=media-libs/freetype-2.13.2 harfbuzz
+
+net-dns/avahi mdnsresponder-compat
