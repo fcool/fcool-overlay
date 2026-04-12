@@ -75,3 +75,5 @@ media-libs/phonon -vlc gstreamer
 # required by @selected
 # required by @world (argument)
 >=dev-libs/jemalloc-5.3.0-r2 abi_x86_32
+
+net-libs/ngtcp2 abi_x86_32
