@@ -719,3 +719,6 @@ net-libs/gnutls abi_x86_32
 # required by @selected
 # required by @world (argument)
 >=app-accessibility/at-spi2-core-2.50.2 abi_x86_32
+
+
+media-libs/shaderc abi_x86_32
