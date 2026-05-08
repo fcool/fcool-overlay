@@ -722,3 +722,5 @@ net-libs/gnutls abi_x86_32
 
 
 media-libs/shaderc abi_x86_32
+
+>=dev-libs/leancrypto-1.7.2-r3 abi_x86_32
