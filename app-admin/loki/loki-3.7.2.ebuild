@@ -14,7 +14,7 @@ SLOT="0"
 IUSE=""
 COMMON_DEPEND="acct-group/loki
         acct-user/loki"
-BDEPEND=">=dev-lang/go-1.26.6"
+BDEPEND=">=dev-lang/go-1.26.2"
 DEPEND="${COMMON_DEPEND}"
 RDEPEND="${COMMON_DEPEND}
         app-admin/logcli"

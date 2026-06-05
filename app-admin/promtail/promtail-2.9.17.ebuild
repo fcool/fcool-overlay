@@ -14,7 +14,7 @@ SLOT="0"
 IUSE=""
 DEPEND=""
 RDEPEND=""
-BDEPEND=">=dev-lang/go-1.19.0"
+BDEPEND=">=dev-lang/go-1.26.2"
 
 EGO_PN="github.com/grafana/loki"
 S="${WORKDIR}/loki-$PV/"

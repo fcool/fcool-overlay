@@ -13,7 +13,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 IUSE=""
 COMMON_DEPEND=""
-BDEPEND=">=dev-lang/go-1.26.6"
+BDEPEND=">=dev-lang/go-1.26.2"
 DEPEND="${COMMON_DEPEND} !<app-admin/loki-2.9.3-r2"
 RDEPEND="${COMMON_DEPEND} !<app-admin/loki-2.9.3-r2"
 
