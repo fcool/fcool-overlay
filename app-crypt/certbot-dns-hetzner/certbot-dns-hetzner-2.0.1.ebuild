@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{9..13} )
+PYTHON_COMPAT=( python3_{9..14} )
 
 inherit distutils-r1
 
@@ -25,10 +25,10 @@ KEYWORDS="amd64 ~ppc64"
 # TODO: as long as we do not support python2.7 this is fine.
 # If we would need to support python 2 we had another dep: dev-python/parsedatetime
 
-RDEPEND=">=dev-python/dns-lexicon-3.11.6
-    >=app-crypt/certbot-2.0.0
-    dev-python/requests
-    dev-python/requests-mock
+RDEPEND=">=dev-python/dns-lexicon-3.11.6[${PYTHON_USEDEP}]
+    >=app-crypt/certbot-2.0.0[${PYTHON_USEDEP}]
+    dev-python/requests[${PYTHON_USEDEP}]
+    dev-python/requests-mock[${PYTHON_USEDEP}]
 "
 
 distutils_enable_tests unittest
