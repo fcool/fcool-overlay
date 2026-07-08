@@ -1,1 +1,1 @@
-net-libs/nodejs npm
+net-libs/nodejs npm corepack
