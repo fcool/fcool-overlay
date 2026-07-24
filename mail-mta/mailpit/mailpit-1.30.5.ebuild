@@ -16,6 +16,8 @@ LICENSE="MIT"
 KEYWORDS="amd64 arm64"
 SLOT="0"
 
+BDEPEND=">=dev-lang/go-1.25.0"
+
 src_compile() {
         npm run package
 	ego build -ldflags "-s -w -X github.com/axllent/mailpit/config.Version=v${PV}"
