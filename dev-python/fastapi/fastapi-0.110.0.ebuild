@@ -1,27 +1,21 @@
-# Copyright 1999-2023 Gentoo Authors
-# Distributed under the terms of the GNU General Public License v2
-
+# Copyright
 EAPI=8
 
-DISTUTILS_USE_PEP517=hatchling
-PYTHON_COMPAT=( python3_{8..12} )
+PYTHON_COMPAT=( python3_{12..14} )
+DISTUTILS_USE_PEP517=setuptools
 
-inherit distutils-r1
+inherit pypi distutils-r1
 
-DESCRIPTION="High performance, easy to learn, fast to code, ready for production"
-HOMEPAGE="https://fastapi.tiangolo.com/ https://github.com/tiangolo/fastapi"
-SRC_URI="https://github.com/tiangolo/${PN}/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
-
+DESCRIPTION="High performance web framework"
+HOMEPAGE="https://fastapi.tiangolo.com"
+SRC_URI="https://files.pythonhosted.org/packages/61/53/326977db62bf34bbdfc64acb9414e1881af7ea14e8a062fd1c11a8697616/fastapi-0.110.0.tar.gz"
 LICENSE="MIT"
-SLOT=0
-KEYWORDS="~amd64 ~x86"
-
+SLOT="0"
+KEYWORDS="~amd64"
 RESTRICT="test"
 
-BDEPEND=">=dev-python/hatchling-1.13.0[${PYTHON_USEDEP}]"
 RDEPEND="
-	>=dev-python/anyio-3.7.1[${PYTHON_USEDEP}]
-	>=dev-python/pydantic-1.7.4[${PYTHON_USEDEP}]
-	>=dev-python/starlette-0.36.3[${PYTHON_USEDEP}]
-	>=dev-python/typing-extensions-4.8.0[${PYTHON_USEDEP}]
+	dev-python/pydantic[${PYTHON_USEDEP}]
+	dev-python/starlette[${PYTHON_USEDEP}]
+	dev-python/typing-extensions[${PYTHON_USEDEP}]
 "
