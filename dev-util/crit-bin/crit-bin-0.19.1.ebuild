@@ -8,6 +8,8 @@ HOMEPAGE="https://github.com/tomasz-tomczyk/crit"
 
 SRC_URI="
 	https://github.com/tomasz-tomczyk/crit/releases/download/v${PV}/crit-linux-amd64 -> crit-linux-amd64-${PV}
+	https://github.com/tomasz-tomczyk/crit/releases/download/v${PV}/crit-linux-arm64 -> crit-linux-arm64-${PV}
+	https://github.com/tomasz-tomczyk/crit/releases/download/v${PV}/checksums.txt -> checksums.txt
 	https://raw.githubusercontent.com/tomasz-tomczyk/crit/v${PV}/README.md -> README.md
 "
 
@@ -20,7 +22,12 @@ RESTRICT="mirror strip"
 QA_PREBUILT="usr/bin/crit"
 
 src_unpack() {
-	cp "${DISTDIR}/crit-linux-amd64-${PV}" "${S}/crit"
+	if [ "${ARCH}" = "amd64" ]; then
+		cp "${DISTDIR}/crit-linux-amd64-${PV}" "${S}/crit"
+	else
+		cp "${DISTDIR}/crit-linux-arm64-${PV}" "${S}/crit"
+	fi
+	cp "${DISTDIR}/checksums.txt" "${S}/checksums.txt"
 	cp "${DISTDIR}/README.md" "${S}/README.md"
 }
 
