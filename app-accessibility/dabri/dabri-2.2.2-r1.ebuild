@@ -15,7 +15,7 @@ SLOT="0"
 IUSE=""
 
 BDEPEND=">=dev-lang/go-1.25.0"
-DEPEND=">=app-accessibility/whisper-cpp-1.8.4
+DEPEND=">=app-accessibility/whisper-cpp-1.9.4
 >=sys-apps/dbus-1.16.2
 >=x11-misc/xdotool-4.20251130.1
 >=media-sound/alsa-utils-1.2.13
@@ -26,9 +26,9 @@ DEPEND=">=app-accessibility/whisper-cpp-1.8.4
 "
 
 src_compile() {
-	CGO_ENABLED=1 CGO_LDFLAGS="-lwhisper -lggml -lggml-cpu -lggml-vulkan" ego build -v \
+	CGO_ENABLED=1 CGO_CFLAGS="${CGO_CFLAGS} -I/usr/include/whisper.cpp" CGO_LDFLAGS="-lwhisper -lggml -lggml-cpu -lggml-vulkan" ego build -v \
         -tags systray \
-        -ldflags "-s -w -X github.com/AshBuk/${PN}/internal/version.Version=${PV} -linkmode=external -extldflags '-Wl,-rpath,/usr/lib/${PN}'" \
+        -ldflags "-s -w -X github.com/AshBuk/${PN}/internal/version.Version=${PV} -linkmode=external -extldflags '-L/usr/lib64/whisper.cpp -Wl,-rpath,/usr/lib/${PN}'" \
         -o "${PN}" \
         ./cmd/${PN}
 }
