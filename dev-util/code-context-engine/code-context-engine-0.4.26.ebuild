@@ -15,17 +15,25 @@ HOMEPAGE="
 "
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="+local"
 
 RESTRICT="test"
 
+# NOTE: the "local" embedding extra (dev-python/fastembed) needs
+# sci-libs/onnxruntime[python], which is only available from ::guru.
+
+# Upstream caps tree-sitter at <0.26 only for its PyPI wheels, which ship
+# their own bundled core and crash when grammar wheels lag behind. Here
+# dev-python/tree-sitter and the grammar packages are all built against
+# the shared dev-libs/tree-sitter, so no upper bound is needed (and
+# pinning <0.26 conflicts with e.g. dev-util/pkgcheck).
 RDEPEND="
 	local? ( >=dev-python/fastembed-0.4.0[${PYTHON_USEDEP}] )
 	>=dev-python/aiohttp-3.9.0[${PYTHON_USEDEP}]
 	>=dev-python/click-8.1.0[${PYTHON_USEDEP}]
 	>=dev-python/fastapi-0.110.0[${PYTHON_USEDEP}]
-	>=dev-python/httpx-0.27.0[${PYTHON_USEDEP}]
+	>=dev-python/httpx-0.28.1[${PYTHON_USEDEP}]
 	>=dev-python/mcp-1.0.0[${PYTHON_USEDEP}]
 	<dev-python/mcp-2.0.0[${PYTHON_USEDEP}]
 	>=dev-python/numpy-1.24.0[${PYTHON_USEDEP}]
@@ -33,7 +41,6 @@ RDEPEND="
 	>=dev-python/pyyaml-6.0.0[${PYTHON_USEDEP}]
 	>=dev-db/sqlite-vec-0.1.6
 	>=dev-python/tree-sitter-0.22.0[${PYTHON_USEDEP}]
-	<dev-python/tree-sitter-0.26.0[${PYTHON_USEDEP}]
 	>=dev-libs/tree-sitter-c-sharp-0.23.0[python,${PYTHON_USEDEP}]
 	>=dev-libs/tree-sitter-go-0.23.0[python,${PYTHON_USEDEP}]
 	>=dev-libs/tree-sitter-java-0.23.0[python,${PYTHON_USEDEP}]
