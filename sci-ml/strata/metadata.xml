@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>ferdinand.kuhl@sincnovation.com</email>
+		<name>Ferdinand Kuhl</name>
+	</maintainer>
+	<use>
+		<flag name="hip">Build the engine for AMD GPUs using HIP/ROCm (untested)</flag>
+	</use>
+	<upstream>
+		<remote-id type="github">Niko1221/Strata</remote-id>
+	</upstream>
+</pkgmetadata>

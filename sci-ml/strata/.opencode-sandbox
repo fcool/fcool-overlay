@@ -1,0 +1,3 @@
+#OPENCODE_WORKSPACE_PATHS="~/localdev/GreetPlusDev:~/localdev/GreetPlusAldiDev:~/.ssh"
+OPENCODE_WORKSPACE_READ_PATHS="/home/fcool/.local/bin:/home/fcool/.local/share/uv/:/var/db/repos/gentoo:/etc:/var/lib/portage:/var/db/pkg"
+OPENCODE_WORKSPACE_PATHS="~/.cce/projects:/var/db/repos/fcool-overlay:/var/tmp/portage:~/.cache/fastembed"
