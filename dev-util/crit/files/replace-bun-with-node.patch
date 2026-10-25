@@ -1,0 +1,35 @@
+--- a/copy-deps.js
++++ b/copy-deps.js
+@@ -1,5 +1,5 @@
+-import { cpSync, readdirSync, readFileSync, writeFileSync, unlinkSync } from "fs";
+-import { execSync } from "child_process";
++const { cpSync, readdirSync, readFileSync, writeFileSync, unlinkSync } = require("fs");
++const { execSync } = require("child_process");
+ 
+ const dest = "web";
+ 
+--- a/package.json
++++ b/package.json
+@@ -9,7 +9,8 @@
+     "mermaid": "^11.16.1"
+   },
+   "scripts": {
+-    "update-deps": "bun run copy-deps.js",
++    "copy-deps": "node copy-deps.js",
++    "update-deps": "npm run copy-deps",
+     "test:frontend": "node web/__tests__/markdown-patch.test.mjs && node web/__tests__/crit-diff-renderer.test.js && node web/__tests__/markdown-replacements.test.js && node web/test-diff-render.mjs"
+   },
+   "devDependencies": {
+--- a/Makefile
++++ b/Makefile
+@@ -23,8 +23,8 @@
+ 	GOOS=windows GOARCH=arm64 go build -ldflags "$(LDFLAGS)" -o dist/crit-windows-arm64.exe ./cmd/crit
+ 
+ update-deps:
+-	bun install
+-	bun run update-deps
++	npm install
++	npm run update-deps
+ 
+ test:
+ 	go test ./...
