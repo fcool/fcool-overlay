@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>dist-kernel@gentoo.org</email>
+		<name>Distribution Kernel Project</name>
+	</maintainer>
+	<longdescription lang="en">
+		TUXEDO flavour of the Gentoo distribution kernel: built by the very
+		gentoo-kernel eclass and install layout, with TUXEDO's bugfix patches
+		and KConfig choices layered on top.
+	</longdescription>
+	<upstream>
+		<remote-uri>
+			https://gitlab.com/tuxedocomputers/development/packages/linux
+		</remote-uri>
+	</upstream>
+	<use>
+		<flag name="hardened">
+			Apply the Kernel Self Protection Project's hardening selections
+		</flag>
+	</use>
+</pkgmetadata>
